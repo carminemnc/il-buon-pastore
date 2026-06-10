@@ -300,6 +300,8 @@ python -m http.server 8000 --directory docs
 
 GitHub Pages → Settings → Pages → Branch: `main`, cartella: `/docs`
 
+Sito live: **https://ilbuonpastorebio.it**
+
 ---
 
 ## TODO

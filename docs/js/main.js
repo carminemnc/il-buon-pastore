@@ -12,7 +12,7 @@
     address: "Via Ca' Santino 1963, 47834 Montefiore Conca (RN)",
     mapsQuery: "Via+Ca'+Santino+1963+47834+Montefiore+Conca+RN",
     orari: [
-      { days:{it:'Lun – Sab',en:'Mon – Sat'}, hours:'15:00 – 19:00' },
+      { days:{it:'Lun \u2013 Sab',en:'Mon \u2013 Sat'}, hours:'15:00 \u2013 19:00' },
       { days:{it:'Domenica',en:'Sunday'}, hours:{it:'Chiuso',en:'Closed'}, closed:true },
     ],
   };
@@ -29,73 +29,85 @@
   const GALLERY = [
     {src:'assets/imgs/pecorino/ricotta.webp', name:'Ricotta Fresca',
       sub:{it:'Cremosa',en:'Creamy'},
-      desc:{it:"La ricotta fresca è molto delicata e con una cremosità unica, ottima da mangiare al cucchiaio. Diventa un dessert completo con marmellate o miele e cannella.",
-            en:"Our fresh ricotta is exceptionally delicate and creamy, perfect eaten by the spoonful. It becomes a complete dessert with jam or honey and cinnamon."},
-      scheda:{it:'Ingredienti: Siero di latte | Pezzatura: 80gr, 400gr, 1500gr',
-              en:'Ingredients: Whey | Size: 80g, 400g, 1500g'}},
+      desc:{it:"Dopo la prima scrematura del latte, nel caldaio resta il siero povero di grassi ma ricco di proteine; queste ultime per effetto del calore si associano e si ottiene cos\u00ec per fioritura la ricotta. La ricotta fresca \u00e8 molto delicata e con una cremosit\u00e0 unica, ottima da mangiare al cucchiaio. Diventa un dessert completo con l\u2019aggiunta di marmellate o miele e cannella.",
+            en:"After the first skimming, the vat retains whey low in fat but rich in protein; heated, the proteins bond and the ricotta \u2018blooms\u2019. Our fresh ricotta is exceptionally delicate and creamy, perfect eaten by the spoonful. It becomes a complete dessert with jam or honey and cinnamon."},
+      scheda:{it:'Ingredienti: Siero di latte | Pezzatura: 80gr, 400gr, 1500gr | Conservazione: tra 0\u00b0 e 4\u00b0',
+              en:'Ingredients: Whey | Size: 80g, 400g, 1500g | Storage: 0\u20134\u00b0C'}},
+    {src:'assets/imgs/pecorino/fresco.webp', name:'Il Fresco',
+      sub:{it:'Pecorino a buccia bianca',en:'White-rind pecorino'},
+      desc:{it:"\u00c8 un formaggio semplice e antico lavorato completamente a mano. Il latte posto nel caldaio viene scaldato a circa 33\u00b0, quindi si aggiunge il caglio naturale di vitello senza conservanti. Trascorso il tempo necessario per cagliare, si rompe la cagliata a chicco di riso e la si raccoglie a mano con le formelle, lavorandole una ad una.",
+            en:"A simple, ancient cheese made entirely by hand. The milk is heated to about 33\u00b0C in the vat, then preservative-free natural calf rennet is added. Once curdled, the curd is broken to rice-grain size and gathered by hand into moulds, each one shaped individually."},
+      scheda:{it:'Ingredienti: Latte crudo di pecora, caglio naturale di vitello, sale di Trapani | Stagionatura: Circa 1 settimana | Pezzatura: 1,5 kg | Conservazione: tra 4\u00b0 e 9\u00b0',
+              en:'Ingredients: Raw sheep milk, natural calf rennet, Trapani salt | Ageing: ~1 week | Size: 1.5 kg | Storage: 4\u20139\u00b0C'}},
     {src:'assets/imgs/pecorino/caciotta.webp', name:'La Caciotta',
       sub:{it:'Pecorino semistagionato',en:'Semi-aged pecorino'},
-      desc:{it:"Un formaggio semplice e antico lavorato completamente a mano. Il latte viene scaldato a circa 33°, si aggiunge il caglio naturale di vitello. La cagliata si rompe a chicco di riso e si raccoglie a mano.",
-            en:"A simple, ancient cheese made entirely by hand. The milk is heated to about 33°C, then natural calf rennet is added. The curd is broken to rice-grain size and gathered by hand."},
-      scheda:{it:'Ingredienti: Latte crudo di pecora, caglio naturale di vitello, sale di Trapani | Stagionatura: Almeno 30gg | Pezzatura: 1,5 kg | Disponibilità: Tutto l\'anno',
-              en:'Ingredients: Raw sheep milk, natural calf rennet, Trapani salt | Ageing: Min. 30 days | Size: 1.5 kg | Availability: Year-round'}},
+      desc:{it:"\u00c8 un formaggio semplice e antico lavorato completamente a mano. Il latte posto nel caldaio viene scaldato a circa 33\u00b0, quindi si aggiunge il caglio naturale di vitello senza conservanti. Trascorso il tempo necessario per cagliare, si rompe la cagliata a chicco di riso e la si raccoglie a mano con le formelle, lavorandole una ad una.",
+            en:"A simple, ancient cheese made entirely by hand. The milk is heated to about 33\u00b0C in the vat, then preservative-free natural calf rennet is added. Once curdled, the curd is broken to rice-grain size and gathered by hand into moulds, each one shaped individually."},
+      scheda:{it:'Ingredienti: Latte crudo di pecora, caglio naturale di vitello, sale di Trapani | Stagionatura: Almeno 30gg | Pezzatura: 1,5 kg | Conservazione: tra 0\u00b0 e 4\u00b0 | Disponibilit\u00e0: Tutto l\'anno',
+              en:'Ingredients: Raw sheep milk, natural calf rennet, Trapani salt | Ageing: Min. 30 days | Size: 1.5 kg | Storage: 0\u20134\u00b0C | Availability: Year-round'}},
     {src:'assets/imgs/pecorino/appassito.webp', name:"L'Appassito",
       sub:{it:'A pasta non lavorata',en:'Unworked curd'},
-      desc:{it:"La cagliata viene raccolta in blocchi con formelle a cono. Le formelle si fanno stufare al calore del caldaio perdendo il 50% del peso. Appassisce lentamente senza pressione. Si presenta come una robiolina di circa 300gr.",
-            en:"The curd is gathered in cone-shaped moulds and left to drain in the warmth of the vat, losing 50% of its weight. It wilts slowly without pressure, resulting in a small 300g wheel."},
-      scheda:{it:'Ingredienti: Latte crudo di pecora, caglio naturale di vitello, sale di Trapani | Stagionatura: Circa 30gg | Pezzatura: 350 gr | Disponibilità: Da dicembre',
-              en:'Ingredients: Raw sheep milk, natural calf rennet, Trapani salt | Ageing: ~30 days | Size: 350g | Availability: From December'}},
+      desc:{it:"Questo formaggio \u00e8 un pecorino a pasta non lavorata. Dal caldaio viene raccolta la cagliata rotta in blocchi, con delle formelle a cono della capienza di poco pi\u00f9 di 1 kg. Le formelle si fanno stufare al calore del caldaio e perdono cos\u00ec il 50% del loro peso, quindi vengono messe in cella dove in circa 20gg perdono ancora il 30%. L\u2019abbiamo chiamato l\u2019appassito perch\u00e9 appunto appassisce lentamente senza alcuna pressione manuale. Si presenta come una robiolina di circa 300gr, con buccia dorata e pasta morbida e burrosa.",
+            en:"An unworked-curd pecorino. The curd is gathered from the vat in blocks using cone-shaped moulds holding just over 1 kg. The moulds sweat in the vat\u2019s warmth, losing 50% of their weight, then rest in a cold room where they lose another 30% over 20 days. We call it \u2018l\u2019appassito\u2019 because it wilts slowly without any manual pressure. The result is a small 300g wheel with a golden rind and soft, buttery paste."},
+      scheda:{it:'Ingredienti: Latte crudo di pecora, caglio naturale di vitello, sale di Trapani | Stagionatura: Circa 30gg | Pezzatura: 350 gr | Conservazione: tra 0\u00b0 e 4\u00b0 | Disponibilit\u00e0: Da dicembre',
+              en:'Ingredients: Raw sheep milk, natural calf rennet, Trapani salt | Ageing: ~30 days | Size: 350g | Storage: 0\u20134\u00b0C | Availability: From December'}},
     {src:'assets/imgs/pecorino/aromatico.webp', name:"L'Aromatico",
       sub:{it:'Alle erbe aromatiche',en:'With aromatic herbs'},
-      desc:{it:"Il pecorino fresco viene cosparso con un battuto di salvia, rosmarino, timo e finocchio selvatico. Lo si lascia in un otre per circa 10gg dove subisce una fermentazione. Si ottiene un formaggio intenso e profumato.",
-            en:"The fresh pecorino is coated with a blend of sage, rosemary, thyme and wild fennel, then left in a cask for about 10 days to ferment. The result is an intense, fragrant cheese."},
-      scheda:{it:'Ingredienti: Latte crudo di pecora, caglio naturale di vitello, sale di Trapani, erbe aromatiche | Stagionatura: Circa 20gg | Pezzatura: 1,5 kg | Disponibilità: Da dicembre',
-              en:'Ingredients: Raw sheep milk, natural calf rennet, Trapani salt, aromatic herbs | Ageing: ~20 days | Size: 1.5 kg | Availability: From December'}},
+      desc:{it:"Il pecorino fresco, a buccia ancora bianca, viene cosparso con un battuto di erbe aromatiche: salvia, rosmarino, timo, finocchio selvatico e menta. Lo si lascia in un otre per circa 10gg, dove subisce una fermentazione. Si ottiene cos\u00ec un formaggio particolarmente intenso e profumato con una pasta bianchissima fortemente aromatizzata ma con la consistenza di un formaggio giovane.",
+            en:"The fresh pecorino, still white-skinned, is coated with a blend of aromatic herbs: sage, rosemary, thyme, wild fennel and mint. It rests in a cask for about 10 days, undergoing fermentation. The result is an intensely fragrant cheese with a very white, heavily aromatised paste yet the texture of a young cheese."},
+      scheda:{it:'Ingredienti: Latte crudo di pecora, caglio naturale di vitello, sale di Trapani, erbe aromatiche | Stagionatura: Circa 20gg | Pezzatura: 1,5 kg | Conservazione: tra 0\u00b0 e 4\u00b0 | Disponibilit\u00e0: Da dicembre',
+              en:'Ingredients: Raw sheep milk, natural calf rennet, Trapani salt, aromatic herbs | Ageing: ~20 days | Size: 1.5 kg | Storage: 0\u20134\u00b0C | Availability: From December'}},
     {src:'assets/imgs/pecorino/gobbo.webp', name:'Il Gobbo',
       sub:{it:'A caglio vegetale',en:'Vegetable rennet'},
-      desc:{it:"Nelle terre di Montefiore si usava l'erba de ches, un'erba spontanea che cagliava il latte. Questa tradizione antichissima era affidata ai racconti dei nonni. Noi l'abbiamo raccolta e la proponiamo con lo spirito di una volta.",
-            en:"In the hills of Montefiore, a wild herb called 'erba de ches' was traditionally used to curdle milk. We've revived this ancient practice, gathering the herb and making cheese the way our grandparents described."},
-      scheda:{it:'Ingredienti: Latte crudo di pecora, caglio vegetale, sale di Trapani | Stagionatura: Circa 60gg | Pezzatura: 1,3 kg | Disponibilità: Da marzo',
-              en:'Ingredients: Raw sheep milk, vegetable rennet, Trapani salt | Ageing: ~60 days | Size: 1.3 kg | Availability: From March'}},
+      desc:{it:"In passato il formaggio era l\u2019alimento dei contadini. Nelle terre di Montefiore e dintorni si usava \"l\u2019erba de ches\", un\u2019erba spontanea che messa nel latte munto in giornata aveva la capacit\u00e0 di cagliarlo. Questa tradizione molto vecchia era ormai completamente perduta e affidata ai racconti dei nonni. Noi abbiamo raccolto questa tradizione e la proponiamo con lo spirito di una volta che narra delle stagioni e dei pascoli dove hanno brucato le pecore.",
+            en:"In the past, cheese was the peasant\u2019s staple. In the lands around Montefiore they used \u2018erba de ches\u2019, a wild herb that could curdle the day\u2019s fresh milk. This ancient tradition had been all but lost, surviving only in grandparents\u2019 tales. We\u2019ve revived it with the same spirit, telling of seasons and pastures where the sheep grazed."},
+      scheda:{it:'Ingredienti: Latte crudo di pecora, caglio vegetale, sale di Trapani | Stagionatura: Circa 60gg | Pezzatura: 1,2 kg | Conservazione: tra 0\u00b0 e 4\u00b0 | Disponibilit\u00e0: Da febbraio',
+              en:'Ingredients: Raw sheep milk, vegetable rennet, Trapani salt | Ageing: ~60 days | Size: 1.2 kg | Storage: 0\u20134\u00b0C | Availability: From February'}},
     {src:'assets/imgs/pecorino/noci.webp', name:'Il Noci',
       sub:{it:'Nella foglia di noce',en:'In walnut leaves'},
-      desc:{it:"L'affinamento in foglia di noce nasce da un formaggio di circa 6 mesi. Si raccolgono le foglie più verdi e vi si avvolge il formaggio, lasciandolo riposare per circa 40gg in una vecchia botte di vino.",
-            en:"A 6-month pecorino is wrapped in the greenest walnut leaves and left to rest for about 40 days in an old wine barrel, gaining subtle tannin notes."},
-      scheda:{it:'Ingredienti: Latte crudo di pecora, caglio naturale di vitello, sale di Trapani, foglia di noce | Stagionatura: Almeno 100gg | Pezzatura: 1,3 kg | Disponibilità: Da luglio',
-              en:'Ingredients: Raw sheep milk, natural calf rennet, Trapani salt, walnut leaves | Ageing: Min. 100 days | Size: 1.3 kg | Availability: From July'}},
+      desc:{it:"L\u2019affinamento in foglia di noce nasce da un formaggio di almeno 70gg. Si raccolgono le foglie pi\u00f9 verdi e vi si avvolge il formaggio, quello fatto in primavera quando il pascolo \u00e8 ricco di erbe profumate. Il pecorino si lascia riposare con le foglie per circa 40gg in una vecchia botte di vino. La tradizione di questo formaggio \u00e8 antica e racconta di un tempo in cui saper affinare non era una ricerca del gusto ma una esigenza.",
+            en:"The walnut-leaf ageing starts from a cheese at least 70 days old. The greenest leaves are gathered and wrapped around the spring-made pecorino, when the pasture is rich with fragrant herbs. The cheese rests with the leaves for about 40 days in an old wine barrel. This ancient tradition tells of a time when ageing was not a pursuit of flavour but a necessity."},
+      scheda:{it:'Ingredienti: Latte crudo di pecora, caglio naturale di vitello, sale di Trapani, foglia di noce | Stagionatura: Almeno 100gg | Pezzatura: 1,3 kg | Conservazione: tra 0\u00b0 e 4\u00b0 | Disponibilit\u00e0: Da luglio fino ad esaurimento',
+              en:'Ingredients: Raw sheep milk, natural calf rennet, Trapani salt, walnut leaves | Ageing: Min. 100 days | Size: 1.3 kg | Storage: 0\u20134\u00b0C | Availability: From July until sold out'}},
+    {src:'assets/imgs/pecorino/castagno.webp', name:'Il Castagno',
+      sub:{it:'Nella foglia di castagno',en:'In chestnut leaves'},
+      desc:{it:"La gente di Montefiore \u00e8 particolarmente legata alla castagna. Il nostro paese pur essendo a 3 km dal mare in linea d\u2019aria \u00e8 attorniato da due castagneti molto antichi. Da questo legame particolare nasce il desiderio di affinare il nostro pecorino nelle foglie di castagno. L\u2019affinamento segue la tecnica della foglia di noce per ottenere un formaggio stagionato con un intenso profumo di sottobosco.",
+            en:"The people of Montefiore have a special bond with the chestnut. Despite being just 3 km from the sea as the crow flies, our village is surrounded by two very old chestnut groves. From this bond comes the desire to age our pecorino in chestnut leaves, following the walnut-leaf technique to obtain a cheese with an intense undergrowth aroma."},
+      scheda:{it:'Ingredienti: Latte crudo di pecora, caglio naturale di vitello, sale di Trapani, foglia di castagno | Stagionatura: Almeno 100gg | Pezzatura: 1,3 kg | Conservazione: tra 0\u00b0 e 4\u00b0 | Disponibilit\u00e0: Da ottobre fino ad esaurimento',
+              en:'Ingredients: Raw sheep milk, natural calf rennet, Trapani salt, chestnut leaves | Ageing: Min. 100 days | Size: 1.3 kg | Storage: 0\u20134\u00b0C | Availability: From October until sold out'}},
     {src:'assets/imgs/pecorino/ubriaco.webp', name:"L'Ubriaco",
       sub:{it:'Nella vinaccia di Sangiovese',en:'In Sangiovese grape pomace'},
-      desc:{it:"In una vecchia botte di rovere poniamo a riposare il nostro pecorino migliore, cospargendolo con le bucce dell'uva dalla quale è appena stato spremuto il Sangiovese. Dopo circa 20 giorni si apre la botte.",
-            en:"Our finest pecorino rests in an old oak barrel, covered with freshly pressed Sangiovese grape skins. After about 20 days the barrel is opened to reveal a rich, wine-kissed cheese."},
-      scheda:{it:'Ingredienti: Latte crudo di pecora, caglio naturale di vitello, sale di Trapani, vinaccia di Sangiovese | Stagionatura: Almeno 100gg | Pezzatura: 1,3 kg | Disponibilità: Da ottobre',
-              en:'Ingredients: Raw sheep milk, natural calf rennet, Trapani salt, Sangiovese grape pomace | Ageing: Min. 100 days | Size: 1.3 kg | Availability: From October'}},
+      desc:{it:"L\u2019autunno \u00e8 un tempo speciale per l\u2019agricoltura. Nelle nostre colline \u00e8 preziosa l\u2019uva di Sangiovese dalla quale si ottiene il nostro pi\u00f9 celebre vino. In una vecchia botte di legno di rovere poniamo a riposare il nostro pecorino migliore, stagionato almeno 60 giorni, cospargendolo con le bucce dell\u2019uva dalla quale \u00e8 appena stato spremuto il Sangiovese. Dopo un tempo di riposo di circa 20 giorni si apre la botte e si pu\u00f2 degustare un nuovo pecorino esaltato dall\u2019intensit\u00e0 della vinaccia.",
+            en:"Autumn is a special time for farming. In our hills the Sangiovese grape is prized, yielding our most celebrated wine. In an old oak barrel we lay our finest pecorino, aged at least 60 days, covered with the skins of freshly pressed Sangiovese grapes. After about 20 days the barrel is opened to reveal a pecorino elevated by the intensity of the pomace."},
+      scheda:{it:'Ingredienti: Latte crudo di pecora, caglio naturale di vitello, sale di Trapani, vinaccia di Sangiovese | Stagionatura: Almeno 100gg | Pezzatura: 1,3 kg | Conservazione: tra 0\u00b0 e 4\u00b0 | Disponibilit\u00e0: Da ottobre fino ad esaurimento',
+              en:'Ingredients: Raw sheep milk, natural calf rennet, Trapani salt, Sangiovese grape pomace | Ageing: Min. 100 days | Size: 1.3 kg | Storage: 0\u20134\u00b0C | Availability: From October until sold out'}},
     {src:'assets/imgs/pecorino/intenso.webp', name:"L'Intenso",
       sub:{it:'Di fossa',en:'Pit-aged'},
-      desc:{it:"Nasce ad aprile/maggio quando il latte è più ricco. Lavorato a latte crudo, stagionato fino ad agosto e poi messo nelle antiche fosse di Sogliano. Si aspetta fino al giorno di Santa Caterina (24 novembre).",
-            en:"Made in April/May when the milk is richest. Aged until August, then placed in the ancient pits of Sogliano until Saint Catherine's day (24 November)."},
-      scheda:{it:'Ingredienti: Latte crudo di pecora, caglio naturale di vitello, sale di Trapani | Stagionatura: Almeno 150gg | Pezzatura: 1,1 kg | Disponibilità: Da novembre',
-              en:'Ingredients: Raw sheep milk, natural calf rennet, Trapani salt | Ageing: Min. 150 days | Size: 1.1 kg | Availability: From November'}},
+      desc:{it:"Il nostro pecorino l\u2019intenso viene fatto nel completo rispetto delle tradizioni. Il formaggio nasce ad aprile/maggio quando il latte \u00e8 pi\u00f9 ricco e carico dei profumi della primavera. Viene lavorato a latte crudo completamente a mano. Lo si lascia stagionare per almeno due mesi fino ad agosto, mese in cui viene messo nelle antiche fosse di Sogliano. Non resta che aspettare fino al giorno di Santa Caterina (24 novembre) per gustare il risultato dell\u2019uomo e della terra \u2014 ogni anno \u00e8 un\u2019attesa con sfumature e retrogusti sempre da scoprire.",
+            en:"Our \u2018intenso\u2019 is made in full respect of tradition. The cheese is born in April/May when the milk is richest, laden with the scents of spring. Worked entirely by hand from raw milk, it ages until August when it enters the ancient pits of Sogliano. Then we wait until Saint Catherine\u2019s day (24 November) to taste the union of man and earth \u2014 each year brings new nuances and aftertastes to discover."},
+      scheda:{it:'Ingredienti: Latte crudo di pecora, caglio naturale di vitello, sale di Trapani | Stagionatura: Almeno 150gg | Pezzatura: 1,1 kg | Conservazione: tra 0\u00b0 e 4\u00b0',
+              en:'Ingredients: Raw sheep milk, natural calf rennet, Trapani salt | Ageing: Min. 150 days | Size: 1.1 kg | Storage: 0\u20134\u00b0C'}},
     {src:'assets/imgs/pecorino/birrozzo.webp', name:'Il Birrozzo',
       sub:{it:'Nelle trebbie di birra',en:'In beer spent grain'},
-      desc:{it:"Con le trebbie fresche del birrificio artigianale La Cotta di Montecerinione, in una vecchia botte, affiniamo il nostro pecorino più stagionato. Il risultato è un formaggio con intensità forte e dolcezza d'orzo.",
-            en:"Using fresh spent grain from the artisan brewery La Cotta di Montecerinione, we age our most mature pecorino in an old barrel. The result is an intense cheese with a sweet barley finish."},
-      scheda:{it:'Ingredienti: Latte crudo di pecora, caglio naturale di vitello, sale di Trapani, trebbie di birra cruda | Stagionatura: Circa 6 mesi | Pezzatura: 1,3 kg',
-              en:'Ingredients: Raw sheep milk, natural calf rennet, Trapani salt, raw beer spent grain | Ageing: ~6 months | Size: 1.3 kg'}},
+      desc:{it:"Nei tempi passati affinare era una necessit\u00e0. Spesso negli antichi monasteri trappisti, dove i monaci mettevano a fermentare l\u2019orzo per fare la birra, poteva capitare che in una di quelle vecchie botti i monaci con le trebbie scolate mettessero il formaggio troppo secco. Nella botte il formaggio trovava nuova vita. Noi lo riproponiamo con lo stesso spirito: alla Cotta, il birrificio artigianale di Montecerinione, abbiamo preso le trebbie fresche e in una vecchia botte le abbiamo messe con il nostro pecorino pi\u00f9 stagionato. Il risultato \u00e8 un formaggio con un\u2019intensit\u00e0 molto forte che lascia in bocca la dolcezza dell\u2019orzo.",
+            en:"In times past, ageing was a necessity. In ancient Trappist monasteries, where monks brewed beer, they would sometimes place cheese too dry to cut into barrels with spent grain \u2014 and the cheese found new life. We revive this spirit: from La Cotta, the artisan brewery in Montecerinione, we take fresh spent grain and barrel it with our most aged pecorino. The result is an intensely flavoured cheese that leaves the sweetness of barley on the palate."},
+      scheda:{it:'Ingredienti: Latte crudo di pecora, caglio naturale di vitello, sale di Trapani, trebbie di birra cruda | Stagionatura: Almeno 100gg | Pezzatura: 1,3 kg | Conservazione: tra 4\u00b0 e 9\u00b0',
+              en:'Ingredients: Raw sheep milk, natural calf rennet, Trapani salt, raw beer spent grain | Ageing: Min. 100 days | Size: 1.3 kg | Storage: 4\u20139\u00b0C'}},
     {src:'assets/imgs/pecorino/blu.webp', name:'Il Blu',
-      sub:{it:'Erborinato naturale',en:'Natural blue'},
-      desc:{it:"Un pecorino dalla stagionatura lunga in cui le muffe nobili penetrano naturalmente nella pasta, creando venature blu-verdi che regalano un sapore intenso e complesso con note di sottobosco.",
-            en:"A long-aged pecorino where noble moulds naturally penetrate the paste, creating blue-green veins that deliver an intense, complex flavour with undergrowth notes."},
-      scheda:{it:'Ingredienti: Latte crudo di pecora, caglio naturale di vitello, sale di Trapani | Stagionatura: Circa 6 mesi | Pezzatura: 1,5 kg',
-              en:'Ingredients: Raw sheep milk, natural calf rennet, Trapani salt | Ageing: ~6 months | Size: 1.5 kg'}},
+      sub:{it:'Pecorino erborinato',en:'Blue pecorino'},
+      desc:{it:"Il nostro Blu \u00e8 un pecorino erborinato prodotto a latte crudo, con metodo biologico di animali allevati al pascolo. Prodotto completamente a mano, viene cagliato a bassa temperatura con l\u2019aggiunta di muffe nobili Roqueforti. La foratura su entrambi i lati durante la stagionatura permette l\u2019ossigenazione della pasta e la naturale fioritura delle muffe. Matura in circa tre mesi, si presenta con una crosta ammuffita e una pasta semidura striata di muffe blu.",
+            en:"Our Blu is a blue pecorino made from raw milk, using organic methods with pasture-raised sheep. Entirely handmade, it is curdled at low temperature with the addition of noble Roquefort moulds. Piercing on both sides during ageing allows oxygenation and the natural blooming of the moulds. It matures in about three months, presenting a mouldy rind and a semi-hard paste streaked with blue veins."},
+      scheda:{it:'Ingredienti: Latte crudo di pecora, caglio naturale, muffe nobili Roqueforti, sale di Trapani | Stagionatura: Almeno 90gg | Pezzatura: 3 kg | Conservazione: tra 4\u00b0 e 9\u00b0',
+              en:'Ingredients: Raw sheep milk, natural rennet, noble Roquefort moulds, Trapani salt | Ageing: Min. 90 days | Size: 3 kg | Storage: 4\u20139\u00b0C'}},
     {src:'assets/imgs/pecorino/stagionato.webp', name:'Lo Stagionato',
       sub:{it:'Lungo affinamento',en:'Long-aged'},
-      desc:{it:"Dalla lavorazione a latte crudo con pasta semicotta si ottiene il nostro stagionato. Ben pressato in grosse formelle dai 2 ai 3 chili, viene lavato, girato e unto con cura per almeno 12 mesi.",
-            en:"From raw milk with a semi-cooked paste comes our aged pecorino. Pressed into large 2–3 kg wheels, it is washed, turned and oiled with care for at least 12 months."},
-      scheda:{it:'Ingredienti: Latte crudo di pecora, caglio naturale di vitello, sale di Trapani | Stagionatura: Almeno 9 mesi | Pezzatura: 2,5 kg',
-              en:'Ingredients: Raw sheep milk, natural calf rennet, Trapani salt | Ageing: Min. 9 months | Size: 2.5 kg'}},
+      desc:{it:"Fare un buon stagionato \u00e8 sicuramente il desiderio di ogni produttore di formaggio, ma occorre tempo e dedicarsi alla cura di un formaggio per un tempo molto lungo non \u00e8 cosa semplice. Dalla lavorazione a latte crudo con il procedimento della pasta semicotta si ottiene il nostro stagionato. \u00c8 un formaggio ben pressato in grosse formelle dai due ai tre chili; viene lavato, girato e unto con la massima cura per oltre 12 mesi, cos\u00ec da raggiungere un\u2019intensit\u00e0 ben bilanciata con la dolcezza.",
+            en:"Making a great aged cheese is every cheesemaker\u2019s dream, but it takes time \u2014 caring for a cheese over many months is no simple task. From raw milk using the semi-cooked paste method comes our stagionato. Pressed into large 2\u20133 kg wheels, it is washed, turned and oiled with the utmost care for over 12 months, achieving an intensity perfectly balanced with sweetness."},
+      scheda:{it:'Ingredienti: Latte crudo di pecora, caglio naturale di vitello, sale di Trapani | Stagionatura: Almeno 12 mesi | Pezzatura: 2,5 kg | Conservazione: tra 4\u00b0 e 9\u00b0',
+              en:'Ingredients: Raw sheep milk, natural calf rennet, Trapani salt | Ageing: Min. 12 months | Size: 2.5 kg | Storage: 4\u20139\u00b0C'}},
     {src:'assets/imgs/pecorino/yobee.webp', name:'Yobee',
       sub:{it:'Yogurt di pecora',en:'Sheep yogurt'},
-      desc:{it:"Uno yogurt intero senza l'aggiunta di zuccheri, compatto e cremoso ma con un gusto delicato. Più ricco di proteine e più facilmente digeribile rispetto allo yogurt classico, è l'ideale per la colazione, uno spuntino o la preparazione di numerose ricette.",
+      desc:{it:"Uno yogurt intero senza l\u2019aggiunta di zuccheri, compatto e cremoso ma con un gusto delicato. Pi\u00f9 ricco di proteine e pi\u00f9 facilmente digeribile rispetto allo yogurt classico, \u00e8 l\u2019ideale per la colazione, uno spuntino o la preparazione di numerose ricette.",
             en:"A whole-milk yogurt with no added sugar, firm and creamy yet delicate in flavour. Richer in protein and easier to digest than regular yogurt, it is ideal for breakfast, a snack or countless recipes."},
       scheda:{it:'Ingredienti: Latte di pecora, fermenti lattici vivi | Pezzatura: 150gr, 500gr',
               en:'Ingredients: Sheep milk, live cultures | Size: 150g, 500g'}},
@@ -115,12 +127,13 @@
   const railNav = document.getElementById('rail');
   const navLinksContainer = document.getElementById('navLinks');
 
-  // Contatti
+  // Helpers
   const mapSrc = `https://www.google.com/maps?q=${CONTATTI.mapsQuery}&output=embed`;
   function lang(){ return document.body.getAttribute('data-lang')||'it'; }
   function t(field){ return typeof field==='object' ? (field[lang()]||field.it||'') : (field||''); }
-
   function buildOrari(){ return CONTATTI.orari.map(o => `<div class="orari-row${o.closed?' orari-closed':''}"><span>${t(o.days)}</span><span>${t(o.hours)}</span></div>`).join(''); }
+
+  // Contatti
   contattiPanel.innerHTML = `
     <div class="contatti-wrap">
       <div class="contatti-header"><span class="label" data-i18n="contatti.label"></span><h2 data-i18n="contatti.title"></h2></div>
@@ -168,7 +181,7 @@
           <div class="gallery-header"><span class="label" data-i18n="${ch.i18n}.label"></span><h2 data-i18n="${ch.i18n}.title"></h2><p class="gallery-hint" data-i18n="galleria.hint">Tocca un formaggio per scoprirlo</p></div>
           <div class="gallery-strip">${items}</div>
         </div>
-        <div class="panel-cue"><span class="scroll-arrow">↓</span></div>`;
+        <div class="panel-cue"><span class="scroll-arrow">\u2193</span></div>`;
     } else {
       const imgPath = i => `assets/imgs/${ch.id}/${ch.id}-${i}.webp`;
       const focus = ch.focus || 'center';
@@ -194,7 +207,7 @@
           <p data-i18n="${ch.i18n}.p1"></p>
           ${hasP2 ? `<p data-i18n="${ch.i18n}.p2"></p>` : ''}
         </div></div>
-        <div class="panel-cue"><span class="scroll-arrow">↓</span></div>`;
+        <div class="panel-cue"><span class="scroll-arrow">\u2193</span></div>`;
     }
 
     panelsContainer.insertBefore(section, contattiPanel);

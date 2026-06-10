@@ -10,10 +10,10 @@ schermo con foto reali in crossfade automatico e una progress rail laterale.
 ## Stack
 
 - **HTML / CSS / JS vanilla**, zero build, zero dipendenze
-- Bilingue **IT / EN** (toggle in nav, persistito in `localStorage`) — include descrizioni prodotti
+- Bilingue **IT / EN** (toggle in nav, persistito in `localStorage`) — include descrizioni prodotti, orari, schede tecniche
 - Dark mode (rispetta `prefers-color-scheme`, persistito)
 - Animazioni: crossfade cinematografico, clip-path expansion tra pannelli, reveal su scroll, nav blur, grain overlay
-- Galleria prodotto con lightbox + bottone WhatsApp per ordini
+- Galleria prodotto (14 prodotti) con lightbox + bottone WhatsApp per ordini
 - Accessibile: `prefers-reduced-motion`, focus visibili, `aria-modal` lightbox, keyboard nav completa
 
 ## Struttura
@@ -22,6 +22,7 @@ schermo con foto reali in crossfade automatico e una progress rail laterale.
 il-buon-pastore/
 ├── docs/                       # ← cartella pubblicata da GitHub Pages
 │   ├── index.html              # shell minimale: hero + slot contatti (il resto è generato da JS)
+│   ├── CNAME                   # dominio custom ilbuonpastorebio.it
 │   ├── css/style.css           # tutto lo stile + animazioni + responsive
 │   ├── js/
 │   │   ├── i18n.js             # dizionario IT/EN, toggle, persistenza
@@ -33,7 +34,7 @@ il-buon-pastore/
 │       ├── stagionatura/       # 3 foto — tappa 03
 │       ├── tavola/             # 3 foto — tappa 04 (prodotto finito)
 │       ├── lana/               # 2 foto — tappa 05
-│       └── pecorino/           # 12 foto prodotti per la galleria
+│       └── pecorino/           # 14 foto prodotti per la galleria
 ├── _originali/                 # backup foto ad alta risoluzione (in .gitignore)
 ├── DOCS.md                     # documentazione tecnica dettagliata
 └── README.md
@@ -48,14 +49,10 @@ python -m http.server 8000 --directory docs
 # poi visita http://localhost:8000
 ```
 
-## Deploy su GitHub Pages
+## Deploy
 
-1. Push del repo su GitHub.
-2. **Settings → Pages → Build and deployment**
-   - Source: *Deploy from a branch*
-   - Branch: `main` · cartella: **`/docs`**
-3. Il sito sarà su `https://<utente>.github.io/il-buon-pastore/`.
-4. **Dominio custom** (opzionale): aggiungi un file `docs/CNAME` con il dominio e configura i DNS.
+- GitHub Pages → Settings → Pages → Branch: `main`, cartella: `/docs`
+- Sito live su **https://ilbuonpastorebio.it**
 
 ## Aggiungere o cambiare le foto
 
@@ -67,7 +64,7 @@ python -m http.server 8000 --directory docs
 
 - Sezioni narrative: modifica le chiavi in `docs/js/i18n.js` (IT + EN)
 - Prodotti galleria: modifica l'array `GALLERY` in `docs/js/main.js` (campi `sub`, `desc`, `scheda` sono bilingui `{it:'...', en:'...'}`)
-- Contatti/orari: modifica l'oggetto `CONTATTI` in `main.js` (orari bilingui)
+- Contatti/orari: modifica l'oggetto `CONTATTI` in `main.js` (orari bilingui `{it,en}`)
 
 ## Design system
 
