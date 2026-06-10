@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Il Buon Pastore — Pecorino a latte crudo biologico</title>
+  <meta name="description" data-i18n-attr="content" data-i18n="meta.desc"
+        content="Azienda agricola Il Buon Pastore: pecorino a latte crudo certificato biologico. Dal pascolo alla tavola, un solo gesto antico.">
+  <link rel="icon" type="image/png" href="assets/imgs/favicon.png">
+  <link rel="apple-touch-icon" href="assets/imgs/apple-touch-icon.png">
+  <link rel="preload" as="image" href="assets/imgs/hero.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <nav class="rail" id="rail" aria-label="Tappe del percorso"></nav>
+
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo" aria-label="Il Buon Pastore — torna su" data-goto="0">
+        <span class="nav-logo-text">Il Buon Pastore</span>
+      </a>
+      <nav class="nav-links" aria-label="Navigazione principale" id="navLinks"></nav>
+      <div class="nav-tools">
+        <button class="lang-toggle" id="langToggle" aria-label="Cambia lingua">
+          <span class="lang-it">IT</span><span class="lang-sep">/</span><span class="lang-en">EN</span>
+        </button>
+        <button class="theme-toggle" id="themeToggle" aria-label="Cambia tema chiaro/scuro">◐</button>
+        <button class="nav-burger" id="navBurger" aria-label="Apri menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="panels" id="panels">
+    <!-- Hero (statico) -->
+    <section class="panel panel-hero is-active">
+      <div class="panel-bg" style="background-image:url('assets/imgs/hero.webp')"></div>
+      <div class="panel-overlay"></div>
+      <div class="panel-center">
+        <span class="label" data-i18n="hero.label">Azienda agricola · Montefiore Conca</span>
+        <h1 class="hero-title" data-i18n="hero.title">Il Buon Pastore</h1>
+        <p class="hero-sub" data-i18n="hero.sub">Pecorino a latte crudo, certificato biologico.<br>Un gesto antico, ogni giorno.</p>
+        <button class="btn-cta" data-goto="1" data-i18n="hero.cta">Scopri come nasce</button>
+      </div>
+      <div class="panel-cue">
+        <span data-i18n="hero.scroll">scorri</span>
+        <span class="scroll-arrow">↓</span>
+      </div>
+    </section>
+    <!-- Contatti (generato da JS) -->
+    <section class="panel panel-light" id="contatti"></section>
+  </main>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
