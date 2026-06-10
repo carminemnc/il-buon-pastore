@@ -95,8 +95,8 @@
               en:'Ingredients: Raw sheep milk, natural calf rennet, Trapani salt | Ageing: Min. 9 months | Size: 2.5 kg'}},
     {src:'assets/imgs/pecorino/yobee.webp', name:'Yobee',
       sub:{it:'Yogurt di pecora',en:'Sheep yogurt'},
-      desc:{it:"Uno yogurt artigianale ottenuto dal latte fresco delle nostre pecore, fermentato con colture vive selezionate. Cremoso e leggermente acidulo, conserva tutta la ricchezza del latte crudo di pascolo.",
-            en:"An artisan yogurt made from our sheep's fresh milk, fermented with selected live cultures. Creamy and slightly tangy, it retains all the richness of raw pasture milk."},
+      desc:{it:"Uno yogurt intero senza l'aggiunta di zuccheri, compatto e cremoso ma con un gusto delicato. Più ricco di proteine e più facilmente digeribile rispetto allo yogurt classico, è l'ideale per la colazione, uno spuntino o la preparazione di numerose ricette.",
+            en:"A whole-milk yogurt with no added sugar, firm and creamy yet delicate in flavour. Richer in protein and easier to digest than regular yogurt, it is ideal for breakfast, a snack or countless recipes."},
       scheda:{it:'Ingredienti: Latte di pecora, fermenti lattici vivi | Pezzatura: 150gr, 500gr',
               en:'Ingredients: Sheep milk, live cultures | Size: 150g, 500g'}},
   ];
