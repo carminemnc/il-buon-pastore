@@ -3,7 +3,7 @@
   'use strict';
   const DICT = {
     it:{
-      'meta.desc':'Azienda agricola Il Buon Pastore: pecorino a latte crudo certificato biologico. Dal pascolo alla tavola, un solo gesto antico.',
+      'meta.desc':'Il Buon Pastore — pecorino a latte crudo biologico a Montefiore Conca (Rimini). Formaggi artigianali di pecora: stagionato, erborinato, di fossa, ricotta. Vendita diretta.',
       'nav.pascolo':'Pascolo','nav.metamorfosi':'Metamorfosi','nav.stagionatura':'Stagionatura','nav.tavola':'Tavola','nav.lana':'La lana','nav.galleria':'Il pecorino','nav.contatti':'Contatti',
       'hero.sub':'Pecorino a latte crudo, certificato biologico.<br>Un gesto antico, ogni giorno.',
       'hero.cta':'Scopri come nasce','hero.scroll':'scorri',
@@ -24,11 +24,13 @@
       'lana.p2':'Scopri il progetto dedicato alla lana su <a href="https://caveoves.it" target="_blank" rel="noopener" class="link-evidenziato">Cave Oves</a>.',
       'galleria.label':'Il nostro pecorino','galleria.title':'Dal pascolo alla tavola','galleria.hint':'Tocca un formaggio per scoprirlo',
       'contatti.label':'Contatti','contatti.title':'Vieni a trovarci',
+      'contatti.tel.title':'Come una volta',
+      'contatti.tel.detail':'+39 339 317 9926',
       'contatti.wa.title':'Filo diretto','contatti.wa.detail':'Tira il filo, rispondiamo noi',
       'contatti.dove':'Dove siamo','contatti.orari.label':'Orari',
     },
     en:{
-      'meta.desc':'Il Buon Pastore farm: organic raw-milk pecorino. From pasture to table, one ancient craft.',
+      'meta.desc':'Il Buon Pastore — organic raw-milk pecorino in Montefiore Conca (Rimini, Italy). Artisan sheep cheese: aged, blue, pit-aged, ricotta. Farm-direct sales.',
       'nav.pascolo':'Pasture','nav.metamorfosi':'Transformation','nav.stagionatura':'Ageing','nav.tavola':'Table','nav.lana':'The wool','nav.galleria':'The cheese','nav.contatti':'Contact',
       'hero.sub':'Organic raw-milk pecorino.<br>An ancient craft, every day.',
       'hero.cta':"Discover how it's made",'hero.scroll':'scroll',
@@ -49,6 +51,8 @@
       'lana.p2':'Discover our wool project at <a href="https://caveoves.it" target="_blank" rel="noopener" class="link-evidenziato">Cave Oves</a>.',
       'galleria.label':'Our pecorino','galleria.title':'From pasture to table','galleria.hint':'Tap a cheese to discover it',
       'contatti.label':'Contact','contatti.title':'Come visit us',
+      'contatti.tel.title':'Like the old days',
+      'contatti.tel.detail':'+39 339 317 9926',
       'contatti.wa.title':'Direct line','contatti.wa.detail':"Pull the thread, we'll answer",
       'contatti.dove':'Where we are','contatti.orari.label':'Hours',
     }
