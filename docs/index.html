@@ -13,14 +13,65 @@
   <meta property="og:image" content="https://ilbuonpastorebio.it/assets/imgs/og-cover.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="it_IT">
+  <meta property="og:locale:alternate" content="en_GB">
+  <meta property="og:site_name" content="Il Buon Pastore">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" type="image/png" href="assets/imgs/favicon.png">
   <link rel="apple-touch-icon" href="assets/imgs/apple-touch-icon.png">
+  <link rel="canonical" href="https://ilbuonpastorebio.it/">
+  <link rel="alternate" hreflang="it" href="https://ilbuonpastorebio.it/">
+  <link rel="alternate" hreflang="en" href="https://ilbuonpastorebio.it/">
+  <link rel="alternate" hreflang="x-default" href="https://ilbuonpastorebio.it/">
   <link rel="preload" as="image" href="assets/imgs/hero.webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Il Buon Pastore",
+    "description": "Azienda agricola biologica: pecorino a latte crudo certificato biologico. Dal pascolo alla tavola, un solo gesto antico.",
+    "url": "https://ilbuonpastorebio.it",
+    "image": "https://ilbuonpastorebio.it/assets/imgs/og-cover.jpg",
+    "telephone": "+393393179926",
+    "email": "levoland@libero.it",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Via Ca' Santino 1963",
+      "addressLocality": "Montefiore Conca",
+      "addressRegion": "RN",
+      "postalCode": "47834",
+      "addressCountry": "IT"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 43.888,
+      "longitude": 12.612
+    },
+    "openingHours": "Mo-Sa 15:00-19:00",
+    "sameAs": ["https://instagram.com/ilbuonpastore"],
+    "priceRange": "€€",
+    "makesOffer": [
+      {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Ricotta Fresca", "description": "Ricotta fresca cremosa di pecora biologica"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Il Fresco", "description": "Pecorino a buccia bianca, latte crudo biologico"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "La Caciotta", "description": "Pecorino semistagionato a latte crudo biologico"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "L'Appassito", "description": "Pecorino a pasta non lavorata, latte crudo biologico"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "L'Aromatico", "description": "Pecorino alle erbe aromatiche, latte crudo biologico"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Il Gobbo", "description": "Pecorino a caglio vegetale, latte crudo biologico"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Il Noci", "description": "Pecorino affinato nella foglia di noce, latte crudo biologico"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Il Castagno", "description": "Pecorino affinato nella foglia di castagno, latte crudo biologico"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "L'Ubriaco", "description": "Pecorino affinato nella vinaccia di Sangiovese, latte crudo biologico"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "L'Intenso", "description": "Pecorino di fossa, latte crudo biologico"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Il Birrozzo", "description": "Pecorino affinato nelle trebbie di birra, latte crudo biologico"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Il Blu", "description": "Pecorino erborinato a latte crudo biologico"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Lo Stagionato", "description": "Pecorino lungo affinamento, latte crudo biologico"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Yobee", "description": "Yogurt di pecora biologico"}}
+    ]
+  }
+  </script>
 </head>
 <body>
   <div class="grain" aria-hidden="true"></div>
@@ -29,14 +80,13 @@
   <header class="nav">
     <div class="nav-inner">
       <a href="#" class="nav-logo" aria-label="Il Buon Pastore — torna su" data-goto="0">
-        <span class="nav-logo-text">Il Buon Pastore</span>
+        <img src="assets/imgs/titolo.png" alt="Il Buon Pastore" class="nav-logo-img">
       </a>
       <nav class="nav-links" aria-label="Navigazione principale" id="navLinks"></nav>
       <div class="nav-tools">
         <button class="lang-toggle" id="langToggle" aria-label="Cambia lingua">
           <span class="lang-it">IT</span><span class="lang-sep">/</span><span class="lang-en">EN</span>
         </button>
-        <button class="theme-toggle" id="themeToggle" aria-label="Cambia tema chiaro/scuro">◐</button>
         <button class="nav-burger" id="navBurger" aria-label="Apri menu" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
@@ -50,8 +100,8 @@
       <div class="panel-bg" style="background-image:url('assets/imgs/hero.webp')"></div>
       <div class="panel-overlay"></div>
       <div class="panel-center">
-        <span class="label" data-i18n="hero.label">Azienda agricola · Montefiore Conca</span>
-        <h1 class="hero-title" data-i18n="hero.title">Il Buon Pastore</h1>
+        <span class="label hero-label-img"><img src="assets/imgs/sopratitolo.png" alt="Azienda agricola biologica" class="hero-sub-img"></span>
+        <h1 class="hero-title"><img src="assets/imgs/titolo.png" alt="Il Buon Pastore" class="hero-logo"></h1>
         <p class="hero-sub" data-i18n="hero.sub">Pecorino a latte crudo, certificato biologico.<br>Un gesto antico, ogni giorno.</p>
         <button class="btn-cta" data-goto="1" data-i18n="hero.cta">Scopri come nasce</button>
       </div>

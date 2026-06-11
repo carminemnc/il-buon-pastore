@@ -1,6 +1,3 @@
-# Foto originali ad alta risoluzione (backup locale, non pubblicare)
-_originali/
-
 # File di sistema
 desktop.ini
 .DS_Store
@@ -12,6 +9,3 @@ Thumbs.db
 *.swp
 *.swo
 *~
-
-# Node (se usato per tool ausiliari)
-node_modules/

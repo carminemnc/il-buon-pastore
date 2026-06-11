@@ -5,7 +5,6 @@
 
   /* ===== CONFIG ===== */
   const CONTATTI = {
-    tel: '+393393179926',
     wa: '+393393179926',
     email: 'levoland@libero.it',
     instagram: 'ilbuonpastore',
@@ -18,10 +17,10 @@
   };
 
   const CHAPTERS = [
-    { id:'pascolo',      count:7, i18n:'pascolo',      focus:'center' },
-    { id:'metamorfosi',  count:9, i18n:'metamorfosi',  focus:'center' },
+    { id:'pascolo',      count:5, i18n:'pascolo',      focus:'center' },
+    { id:'metamorfosi',  count:5, i18n:'metamorfosi',  focus:'center' },
     { id:'stagionatura', count:3, i18n:'stagionatura', focus:'center' },
-    { id:'tavola',       count:3, i18n:'tavola',       focus:'center' },
+    { id:'tavola',       count:2, i18n:'tavola',       focus:'center' },
     { id:'lana',         count:2, i18n:'lana',         focus:'center' },
     { id:'galleria',     count:0, i18n:'galleria',     gallery:true },
   ];
@@ -128,7 +127,6 @@
   const navLinksContainer = document.getElementById('navLinks');
 
   // Helpers
-  const mapSrc = `https://www.google.com/maps?q=${CONTATTI.mapsQuery}&output=embed`;
   function lang(){ return document.body.getAttribute('data-lang')||'it'; }
   function t(field){ return typeof field==='object' ? (field[lang()]||field.it||'') : (field||''); }
   function buildOrari(){ return CONTATTI.orari.map(o => `<div class="orari-row${o.closed?' orari-closed':''}"><span>${t(o.days)}</span><span>${t(o.hours)}</span></div>`).join(''); }
@@ -159,23 +157,19 @@
             <span class="contatto-detail">${CONTATTI.address}</span>
           </div>
           <div class="orari"><span class="orari-label" data-i18n="contatti.orari.label"></span>${buildOrari()}</div>
-          <div class="map-wrap"><iframe src="${mapSrc}" width="100%" height="180" style="border:0;border-radius:6px" allowfullscreen loading="lazy" title="Mappa" sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe></div>
+          <div class="map-wrap"><iframe src="https://www.google.com/maps?q=${CONTATTI.mapsQuery}&output=embed" width="100%" height="180" style="border:0;border-radius:6px" allowfullscreen loading="lazy" title="Mappa" sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe></div>
         </div>
       </div>
-      <footer class="footer">
-        <span class="footer-logo">Il Buon Pastore</span>
-        <p class="footer-copy" data-i18n="footer.copy"></p>
-      </footer>
     </div>`;
 
   // Chapters
-  CHAPTERS.forEach((ch, idx) => {
+  CHAPTERS.forEach(ch => {
     const section = document.createElement('section');
     section.className = ch.gallery ? 'panel panel-gallery' : 'panel panel-chapter';
     section.id = ch.id;
 
     if (ch.gallery) {
-      const items = GALLERY.map((img,i) => `<div class="gallery-item" data-product="${i}"><span class="gallery-name">${img.name}</span><img src="${img.src}" alt="${img.name}" loading="lazy"></div>`).join('');
+      const items = GALLERY.map((img,i) => `<div class="gallery-item" data-product="${i}"><span class="gallery-name">${img.name}</span><img src="${img.src}" alt="${img.name} - ${t(img.sub)} | Il Buon Pastore, pecorino a latte crudo biologico" loading="lazy"></div>`).join('');
       section.innerHTML = `
         <div class="gallery-wrap">
           <div class="gallery-header"><span class="label" data-i18n="${ch.i18n}.label"></span><h2 data-i18n="${ch.i18n}.title"></h2><p class="gallery-hint" data-i18n="galleria.hint">Tocca un formaggio per scoprirlo</p></div>
@@ -206,6 +200,7 @@
           <h2 data-i18n="${ch.i18n}.title"></h2>
           <p data-i18n="${ch.i18n}.p1"></p>
           ${hasP2 ? `<p data-i18n="${ch.i18n}.p2"></p>` : ''}
+          ${ch.count > 1 ? `<div class="photo-dots">${Array.from({length:ch.count},(_,i)=>`<button class="photo-dot${i===0?' active':''}" data-slide="${i}" aria-label="Foto ${i+1}"></button>`).join('')}</div>` : ''}
         </div></div>
         <div class="panel-cue"><span class="scroll-arrow">\u2193</span></div>`;
     }
@@ -218,9 +213,37 @@
     const slides = Array.from(stage.querySelectorAll('.scene-slide'));
     if (slides.length < 2) return;
     let idx = 0, timer = null;
-    const play = () => { if(!timer) timer = setInterval(()=>{ slides[idx].classList.remove('is-active'); idx=(idx+1)%slides.length; slides[idx].classList.add('is-active'); }, CROSSFADE_INTERVAL); };
-    const pause = () => { clearInterval(timer); timer=null; };
     const panel = stage.closest('.panel');
+    const dots = Array.from(panel.querySelectorAll('.photo-dot'));
+
+    const goSlide = (i) => {
+      slides[idx].classList.remove('is-active');
+      idx = i;
+      slides[idx].classList.add('is-active');
+      dots.forEach((d,j) => d.classList.toggle('active', j===idx));
+    };
+    const advance = () => goSlide((idx+1) % slides.length);
+    const play = () => { if(!timer) timer = setInterval(advance, CROSSFADE_INTERVAL); };
+    const pause = () => { clearInterval(timer); timer=null; };
+    const restart = () => { pause(); play(); };
+
+    dots.forEach((dot,i) => dot.addEventListener('click', () => {
+      if(i===idx) return;
+      goSlide(i);
+      restart();
+    }));
+
+    // Swipe horizontally to change photo
+    let swipeX = 0;
+    stage.addEventListener('touchstart', e => { swipeX = e.touches[0].clientX; }, {passive:true});
+    stage.addEventListener('touchend', e => {
+      const dx = swipeX - e.changedTouches[0].clientX;
+      if(Math.abs(dx) < 50) return;
+      if(dx > 0) goSlide((idx+1) % slides.length);
+      else goSlide((idx-1+slides.length) % slides.length);
+      restart();
+    }, {passive:true});
+
     new MutationObserver(() => panel.classList.contains('is-active') ? play() : pause())
       .observe(panel, {attributes:true, attributeFilter:['class']});
   });
@@ -254,7 +277,7 @@
   // Apply i18n
   if(window.i18n){
     window.i18n.setLang(window.i18n.current());
-    window.i18n.onLangChange(newLang =>{
+    window.i18n.onLangChange(newLang => {
       const orariEl = document.querySelector('.orari');
       if(orariEl){
         orariEl.innerHTML = `<span class="orari-label" data-i18n="contatti.orari.label"></span>${buildOrari()}`;
@@ -268,12 +291,18 @@
   const panels = Array.from(document.querySelectorAll('.panel'));
   const dots = Array.from(document.querySelectorAll('.rail-dot'));
   const total = panels.length;
-  let current=0, animating=false, lastWheel=0, touchY=0, touchLock=false, touchInGallery=false;
+  let current=0, animating=false, lastWheel=0, touchY=0, touchX=0, touchLock=false, touchInGallery=false;
 
-  // Dark mode
-  const TK='ibp-theme';
-  (()=>{ const s=localStorage.getItem(TK); document.body.classList.toggle('dark',s?s==='dark':matchMedia('(prefers-color-scheme:dark)').matches); })();
-  function toggleTheme(){ const d=document.body.classList.toggle('dark'); localStorage.setItem(TK,d?'dark':'light'); }
+  // Product lightbox
+  const lb = document.createElement('div');
+  lb.className = 'product-lb';
+  lb.setAttribute('role','dialog');
+  lb.setAttribute('aria-modal','true');
+  lb.setAttribute('aria-label','Dettaglio prodotto');
+  lb.innerHTML = '<div class="product-lb-inner"><button class="product-lb-close" aria-label="Chiudi">&times;</button><div class="product-lb-content"></div></div>';
+  document.body.appendChild(lb);
+  const lbContent = lb.querySelector('.product-lb-content');
+  const lbClose = lb.querySelector('.product-lb-close');
 
   // Navigation
   function clean(p){ p.classList.remove('is-active','is-leaving-fwd','is-leaving-bwd'); p.style.zIndex=''; }
@@ -298,12 +327,13 @@
     goTo(current+(e.deltaY>0?1:-1));
   }, {passive:false});
 
-  addEventListener('touchstart', e=>{ if(animating){touchLock=true;return;} touchLock=false; touchInGallery=!!e.target.closest('.gallery-strip'); touchY=e.touches[0].clientY; }, {passive:true});
-  addEventListener('touchmove', e=>{ if(!touchLock&&!touchInGallery&&!e.target.closest('.panel-light')) e.preventDefault(); }, {passive:false});
-  addEventListener('touchend', e=>{ if(animating||touchLock||touchInGallery) return; const dy=touchY-e.changedTouches[0].clientY; if(Math.abs(dy)>50) goTo(current+(dy>0?1:-1)); }, {passive:true});
+  addEventListener('touchstart', e=>{ if(animating){touchLock=true;return;} touchLock=false; touchInGallery=!!e.target.closest('.gallery-strip'); touchY=e.touches[0].clientY; touchX=e.touches[0].clientX; }, {passive:true});
+  addEventListener('touchmove', e=>{ if(!touchLock&&!touchInGallery&&!e.target.closest('.panel-light')&&!e.target.closest('.product-lb')) e.preventDefault(); }, {passive:false});
+  addEventListener('touchend', e=>{ if(animating||touchLock||lb.classList.contains('open')) return; const dy=touchY-e.changedTouches[0].clientY; const dx=touchX-e.changedTouches[0].clientX; if(touchInGallery&&Math.abs(dx)>=Math.abs(dy)) return; if(Math.abs(dy)>50) goTo(current+(dy>0?1:-1)); }, {passive:true});
 
   addEventListener('keydown', e=>{
-    if(document.querySelector('.product-lb.open')) return;
+    if(e.key==='Escape'){ lb.classList.remove('open'); return; }
+    if(lb.classList.contains('open')) return;
     if(animating) return;
     const tag = document.activeElement?.tagName;
     if(tag==='INPUT'||tag==='TEXTAREA'||tag==='SELECT') return;
@@ -333,41 +363,33 @@
 
   // Toggles
   document.getElementById('langToggle')?.addEventListener('click',()=>window.i18n?.toggle());
-  document.getElementById('themeToggle')?.addEventListener('click',toggleTheme);
 
   // Init
   panels.forEach(clean);
   panels[0].classList.add('is-active');
 
-  // Product lightbox
-  const lb = document.createElement('div');
-  lb.className = 'product-lb';
-  lb.setAttribute('role','dialog');
-  lb.setAttribute('aria-modal','true');
-  lb.setAttribute('aria-label','Dettaglio prodotto');
-  lb.innerHTML = '<div class="product-lb-inner"><button class="product-lb-close" aria-label="Chiudi">&times;</button><div class="product-lb-content"></div></div>';
-  document.body.appendChild(lb);
-  const lbContent = lb.querySelector('.product-lb-content');
-  const lbClose = lb.querySelector('.product-lb-close');
-
   function openProduct(i){
     const p = GALLERY[i]; if(!p) return;
-    const ordina = lang()==='it' ? 'Ordina' : 'Order';
-    const waText = lang()==='it' ? 'Ciao, vorrei ordinare: '+p.name : 'Hi, I\'d like to order: '+p.name;
+    const cta = lang()==='it' ? 'Chiedi info' : 'Ask info';
+    const waText = lang()==='it' ? 'Ciao, vorrei più informazioni su: '+p.name : 'Hi, I\'d like more info about: '+p.name;
+    const schedaHtml = t(p.scheda).split('|').map(s => {
+      const parts = s.trim().split(':');
+      if(parts.length>1){ return `<div class="scheda-item"><span class="scheda-tag">${parts[0].trim()}:</span><span class="scheda-val">${parts.slice(1).join(':').trim()}</span></div>`; }
+      return `<div class="scheda-item"><span class="scheda-val">${s.trim()}</span></div>`;
+    }).join('');
     lbContent.innerHTML = `
-      <img src="${p.src}" alt="${p.name}">
+      <img src="${p.src}" alt="${p.name} - ${t(p.sub)} | Il Buon Pastore, pecorino a latte crudo biologico">
       <div class="product-lb-info">
         <h3>${p.name}</h3>
         <span class="product-lb-sub">${t(p.sub)}</span>
         <p>${t(p.desc)}</p>
-        <div class="product-lb-scheda">${t(p.scheda)}</div>
-        <a href="${WA_LINK}?text=${encodeURIComponent(waText)}" target="_blank" rel="noopener" class="gallery-wa-btn">${WA_SVG} ${ordina}</a>
+        <div class="product-lb-scheda">${schedaHtml}</div>
+        <a href="${WA_LINK}?text=${encodeURIComponent(waText)}" target="_blank" rel="noopener noreferrer" class="gallery-wa-btn">${WA_SVG} ${cta}</a>
       </div>`;
     lb.classList.add('open');
   }
   lbClose.addEventListener('click',()=>lb.classList.remove('open'));
   lb.addEventListener('click',e=>{ if(e.target===lb) lb.classList.remove('open'); });
-  document.addEventListener('keydown',e=>{ if(e.key==='Escape') lb.classList.remove('open'); });
 
   document.querySelectorAll('.gallery-item[data-product]').forEach(el=>{
     el.addEventListener('click',()=>openProduct(parseInt(el.getAttribute('data-product'),10)));

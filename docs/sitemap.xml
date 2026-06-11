@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://ilbuonpastorebio.it/</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://ilbuonpastorebio.it/assets/imgs/pecorino/ricotta.webp</image:loc>
+      <image:title>Ricotta Fresca - Il Buon Pastore</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ilbuonpastorebio.it/assets/imgs/pecorino/fresco.webp</image:loc>
+      <image:title>Il Fresco - Pecorino a buccia bianca</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ilbuonpastorebio.it/assets/imgs/pecorino/caciotta.webp</image:loc>
+      <image:title>La Caciotta - Pecorino semistagionato</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ilbuonpastorebio.it/assets/imgs/pecorino/appassito.webp</image:loc>
+      <image:title>L'Appassito - Pecorino a pasta non lavorata</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ilbuonpastorebio.it/assets/imgs/pecorino/aromatico.webp</image:loc>
+      <image:title>L'Aromatico - Pecorino alle erbe aromatiche</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ilbuonpastorebio.it/assets/imgs/pecorino/gobbo.webp</image:loc>
+      <image:title>Il Gobbo - Pecorino a caglio vegetale</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ilbuonpastorebio.it/assets/imgs/pecorino/noci.webp</image:loc>
+      <image:title>Il Noci - Pecorino nella foglia di noce</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ilbuonpastorebio.it/assets/imgs/pecorino/castagno.webp</image:loc>
+      <image:title>Il Castagno - Pecorino nella foglia di castagno</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ilbuonpastorebio.it/assets/imgs/pecorino/ubriaco.webp</image:loc>
+      <image:title>L'Ubriaco - Pecorino nella vinaccia di Sangiovese</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ilbuonpastorebio.it/assets/imgs/pecorino/intenso.webp</image:loc>
+      <image:title>L'Intenso - Pecorino di fossa</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ilbuonpastorebio.it/assets/imgs/pecorino/birrozzo.webp</image:loc>
+      <image:title>Il Birrozzo - Pecorino nelle trebbie di birra</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ilbuonpastorebio.it/assets/imgs/pecorino/blu.webp</image:loc>
+      <image:title>Il Blu - Pecorino erborinato</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ilbuonpastorebio.it/assets/imgs/pecorino/stagionato.webp</image:loc>
+      <image:title>Lo Stagionato - Pecorino lungo affinamento</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ilbuonpastorebio.it/assets/imgs/pecorino/yobee.webp</image:loc>
+      <image:title>Yobee - Yogurt di pecora biologico</image:title>
+    </image:image>
+  </url>
+</urlset>
