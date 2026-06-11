@@ -42,6 +42,10 @@ Sito fratello di [Cave Oves](https://caveoves.it) — stessa identità visiva (f
 | `--nav-h` | `64px` |
 | `--pad` | `clamp(20px, 5vw, 48px)` |
 
+### Global Reset
+
+- `-webkit-tap-highlight-color: transparent` on all elements (removes blue tap flash on mobile)
+
 ### Easing
 
 | Token | Value | Usage |
@@ -80,7 +84,7 @@ Sito fratello di [Cave Oves](https://caveoves.it) — stessa identità visiva (f
 ### Gallery Strip
 
 - Background: `var(--bg)` (parchment)
-- Header: centered label + h2 + hint text (oro)
+- Header: centered label + h2 + hint text (Playfair 400, oro)
 - Strip: `display:flex`, horizontal scroll (`overflow-x:auto`), `scroll-snap-type:x mandatory`
 - Items: `flex:0 0 clamp(200px,28vw,320px)`, rounded (10px), snap-align center
 - Item structure: name (top, parchment bg) → image (flex:1, object-fit:cover)
@@ -98,7 +102,7 @@ Sito fratello di [Cave Oves](https://caveoves.it) — stessa identità visiva (f
 - Info: name (Playfair 600) → subtitle (oro, uppercase, small) → description → scheda (tag rows) → WhatsApp button
 - **Scheda tecnica**: each field as a row with colored container (10% opacity bg), bold colored label + muted value text
 - **WhatsApp button**: outlined style — parchment bg, green border (`#25D366`), dark green text (`#1a8f45`), green icon, hover tint
-- **Close button**: top-right circle, dark semi-transparent bg (`rgba(0,0,0,.5)`), white ×, hover turns red (`rgba(180,40,40,.7)`)
+- **Close button**: top-right circle, dark semi-transparent bg (`rgba(0,0,0,.5)`), white × (flex-centered, `line-height:1`), hover turns red (`rgba(180,40,40,.7)`)
 
 ### Contatti Section
 
@@ -121,6 +125,7 @@ Sito fratello di [Cave Oves](https://caveoves.it) — stessa identità visiva (f
 - Logo: left (`titolo.png`, 28px height, white via CSS filter, clickable → panel 0)
 - Links: absolute center (small font, white 80%, hover underline oro)
 - Tools: right (lang toggle as bordered pill, burger on mobile)
+- Burger: `z-index:8600` (above nav and menu overlay) to ensure X is always visible/clickable
 - **Mobile menu**: fullscreen overlay (`100vw × 100vh`, `z-index:8400`)
   - Background: `rgba(0,0,0,.92)` + `backdrop-filter:blur(16px)`
   - Links centered, Playfair `clamp(1.6rem,6vw,2.2rem)`, stagger reveal (50ms between each)

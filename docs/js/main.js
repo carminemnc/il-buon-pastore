@@ -290,6 +290,8 @@
   lb.className = 'product-lb';
   lb.setAttribute('role','dialog');
   lb.setAttribute('aria-modal','true');
+  lb.setAttribute('data-i18n-attr','aria-label');
+  lb.setAttribute('data-i18n','galleria.lb.label');
   lb.setAttribute('aria-label','Dettaglio prodotto');
   lb.innerHTML = '<div class="product-lb-inner"><button class="product-lb-close" aria-label="Chiudi">&times;</button><div class="product-lb-content"></div></div>';
   document.body.appendChild(lb);
@@ -361,8 +363,9 @@
 
   function openProduct(i){
     const p = GALLERY[i]; if(!p) return;
-    const cta = lang()==='it' ? 'Chiedi info' : 'Ask info';
-    const waText = lang()==='it' ? 'Ciao, vorrei più informazioni su: '+p.name : 'Hi, I\'d like more info about: '+p.name;
+    const d = window.i18n && window.i18n._dicts ? window.i18n._dicts[lang()] : null;
+    const cta = d && d['galleria.cta'] || (lang()==='it' ? 'Chiedi info' : 'Ask info');
+    const waText = (d && d['galleria.waMsg'] || (lang()==='it' ? 'Ciao, vorrei più informazioni su: ' : 'Hi, I\'d like more info about: ')) + p.name;
     const schedaHtml = t(p.scheda).split('|').map(s => {
       const parts = s.trim().split(':');
       if(parts.length>1){ return `<div class="scheda-item"><span class="scheda-tag">${parts[0].trim()}:</span><span class="scheda-val">${parts.slice(1).join(':').trim()}</span></div>`; }

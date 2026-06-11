@@ -162,7 +162,7 @@ Each chapter with `count > 1` gets a `.panel-crossfade` container with N `.scene
 ## Product Lightbox
 
 - Single `<div class="product-lb">` appended to body
-- `role="dialog"`, `aria-modal="true"`
+- `role="dialog"`, `aria-modal="true"`, `data-i18n-attr="aria-label"` with key `galleria.lb.label`
 - Content rebuilt on every open via `openProduct(index)`
 - Grid layout: image | info (2 columns on ≥600px, stack on mobile)
 - Scheda tecnica displayed as labeled rows with colored containers

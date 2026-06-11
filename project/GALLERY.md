@@ -71,9 +71,9 @@ Not all fields present for all products.
 ## WhatsApp Info Flow
 
 1. User taps product card → lightbox opens
-2. Lightbox shows "Chiedi info" / "Ask info" button (outlined green style)
+2. Lightbox shows "Chiedi info" / "Ask info" button (text from `galleria.cta` dictionary key, outlined green style)
 3. Button links to `https://wa.me/393393179926?text={encoded_message}`
-4. Message format:
+4. Message format (from `galleria.waMsg` dictionary key):
    - IT: `Ciao, vorrei più informazioni su: {product_name}`
    - EN: `Hi, I'd like more info about: {product_name}`
 5. Opens WhatsApp with pre-filled message

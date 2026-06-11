@@ -79,6 +79,7 @@ Do NOT suggest adding build steps, frameworks, or dependencies.
 - **`overflow:hidden` on body** — intentional scroll hijack. Not a UX bug.
 - **`innerHTML` with `data-i18n`** — all values are developer-controlled dictionary strings. Not XSS.
 - **`innerHTML` in product lightbox** — all fields from hardcoded `GALLERY` array. Not user input.
+- **`lana.p2` external link** — `rel="noopener noreferrer"` present. Not a security issue.
 - **WhatsApp link with product name** — name is hardcoded, not user-controlled. Not injection.
 - **Google Maps iframe** — sandboxed with minimal permissions. Intentional.
 - **No `<noscript>` fallback** — entire site is JS-generated. Out of scope.

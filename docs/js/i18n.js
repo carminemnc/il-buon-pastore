@@ -21,8 +21,8 @@
       'tavola.p2':'',
       'lana.label':'','lana.title':'La Lana',
       'lana.p1':'Le nostre pecore non ci danno solo il latte: ogni anno la tosatura restituisce una lana pregiata, che diventa filato artigianale.',
-      'lana.p2':'Scopri il progetto dedicato alla lana su <a href="https://caveoves.it" target="_blank" rel="noopener" class="link-evidenziato">Cave Oves</a>.',
-      'galleria.label':'Il nostro pecorino','galleria.title':'Dal pascolo alla tavola','galleria.hint':'Tocca un formaggio per scoprirlo',
+      'lana.p2':'Scopri il progetto dedicato alla lana su <a href="https://caveoves.it" target="_blank" rel="noopener noreferrer" class="link-evidenziato">Cave Oves</a>.',
+      'galleria.label':'Il nostro pecorino','galleria.title':'Dal pascolo alla tavola','galleria.hint':'Tocca un formaggio per scoprirlo','galleria.cta':'Chiedi info','galleria.waMsg':'Ciao, vorrei più informazioni su: ','galleria.lb.label':'Dettaglio prodotto',
       'contatti.label':'Contatti','contatti.title':'Vieni a trovarci',
       'contatti.tel.title':'Come una volta',
       'contatti.tel.detail':'+39 339 317 9926',
@@ -48,8 +48,8 @@
       'tavola.p2':'',
       'lana.label':'','lana.title':'The Wool',
       'lana.p1':'Our sheep don\u2019t only give us milk: every year shearing yields a fine wool that becomes artisan yarn.',
-      'lana.p2':'Discover our wool project at <a href="https://caveoves.it" target="_blank" rel="noopener" class="link-evidenziato">Cave Oves</a>.',
-      'galleria.label':'Our pecorino','galleria.title':'From pasture to table','galleria.hint':'Tap a cheese to discover it',
+      'lana.p2':'Discover our wool project at <a href="https://caveoves.it" target="_blank" rel="noopener noreferrer" class="link-evidenziato">Cave Oves</a>.',
+      'galleria.label':'Our pecorino','galleria.title':'From pasture to table','galleria.hint':'Tap a cheese to discover it','galleria.cta':'Ask info','galleria.waMsg':'Hi, I\'d like more info about: ','galleria.lb.label':'Product detail',
       'contatti.label':'Contact','contatti.title':'Come visit us',
       'contatti.tel.title':'Like the old days',
       'contatti.tel.detail':'+39 339 317 9926',
@@ -69,6 +69,6 @@
     document.documentElement.lang=lang; document.body.setAttribute('data-lang',lang);
     localStorage.setItem(KEY,lang); cbs.forEach(cb=>cb(lang));
   }
-  window.i18n={_dict:DICT.it, setLang(l){if(DICT[l])apply(l)}, toggle(){apply(document.body.getAttribute('data-lang')==='it'?'en':'it')}, current(){return document.body.getAttribute('data-lang')||'it'}, onLangChange(cb){if(typeof cb==='function')cbs.push(cb)}};
+  window.i18n={_dict:DICT.it, _dicts:DICT, setLang(l){if(DICT[l])apply(l)}, toggle(){apply(document.body.getAttribute('data-lang')==='it'?'en':'it')}, current(){return document.body.getAttribute('data-lang')||'it'}, onLangChange(cb){if(typeof cb==='function')cbs.push(cb)}};
   apply(detect());
 })();
