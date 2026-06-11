@@ -154,7 +154,7 @@ Does every feature work correctly under all conditions?
 - Panel navigation disabled while open
 
 **Contatti:**
-- All links functional (Instagram, WhatsApp, email, Maps)
+- All links functional (Phone, Instagram, WhatsApp, email, Maps)
 - Orari correct in both languages
 - Map loads
 

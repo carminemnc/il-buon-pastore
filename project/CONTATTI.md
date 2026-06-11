@@ -41,6 +41,7 @@ const CONTATTI = {
 
 | Channel | URL | Behavior |
 |---------|-----|----------|
+| Phone | `tel:+393393179926` | Opens dialer |
 | Instagram | `https://instagram.com/ilbuonpastore` | Opens in new tab |
 | WhatsApp | `https://wa.me/393393179926` | Opens WhatsApp (no pre-filled message from contatti) |
 | Email | `mailto:levoland@libero.it` | Opens mail client |

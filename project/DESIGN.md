@@ -112,7 +112,7 @@ Sito fratello di [Cave Oves](https://caveoves.it) — stessa identità visiva (f
   - Orari box: bordered (8px radius), label + rows (day | hours)
   - Closed day: hours in red (`rgba(192,57,43,.7)`)
   - Map iframe: rounded 6px, 180px height
-- **Mobile**: left cards become horizontal row (icon + label only, detail hidden)
+- **Mobile**: left cards become 2×2 grid (icon + label only, detail hidden)
 
 ### Navigation (top)
 
@@ -178,5 +178,5 @@ All images WebP format.
 | Nav links | Centered, horizontal | Fullscreen overlay, large Playfair text |
 | Gallery strip | ~320px items | ~200px items |
 | Lightbox | 2-column grid | Stacked (image top, info below) |
-| Contatti | 2-column grid | Single column, compact cards |
-| Contact card detail | Visible (email, @handle) | Hidden (icon + label only) |
+| Contatti | 2-column grid | Single column, contact cards 2×2 grid |
+| Contact card detail | Visible (email, @handle, phone) | Hidden (icon + label only) |

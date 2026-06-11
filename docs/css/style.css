@@ -191,7 +191,7 @@ body[data-lang="en"] .lang-toggle .lang-en{opacity:1}
   .panel-cue{display:none}
   .panel-light .contatti-wrap{padding-top:calc(var(--nav-h) + 1.5rem)}
   .contatti-cards{grid-template-columns:1fr}
-  .contatti-left{flex-direction:row;gap:8px}
+  .contatti-left{display:grid;grid-template-columns:1fr 1fr;gap:8px}
   .contatto-link{flex:1;min-width:0;padding:12px 10px;gap:8px;justify-content:center}
   .contatto-link-text .contatto-detail{display:none}
   .contatto-link strong{font-size:.58rem;letter-spacing:1px}
