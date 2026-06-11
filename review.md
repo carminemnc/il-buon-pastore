@@ -231,7 +231,7 @@ Most visitors are on mobile (375px–430px):
 - CNAME present
 - No broken image references (count matches files)
 - i18n completeness: every `data-i18n` key in both IT and EN
-- RAIL_LABELS count matches total panels
+- RAIL_LABELS removed (rail removed from site)
 - NAV_ORDER references valid chapter IDs
 - OG meta tags present and correct
 - Canonical URL present

@@ -115,7 +115,6 @@
   const WA_SVG = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 14.9L2 22l5.3-1.4A10 10 0 1 0 12 2Zm5.4 14.2c-.2.7-1.3 1.3-1.8 1.4-.5 0-1 .2-3.2-.7a11.4 11.4 0 0 1-4.6-4c-.4-.5-1.2-1.8-1.2-3.4 0-1.6.8-2.4 1.1-2.7.3-.3.6-.4.8-.4h.6c.2 0 .5 0 .7.5s.9 2.2 1 2.3c.1.2.1.4 0 .6-.1.2-.2.3-.3.5l-.5.5c-.2.2-.4.4-.2.7.2.4.9 1.5 2 2.4.7.6 1.4 1 1.8 1.1.3.2.5.1.7-.1s.8-1 1-1.3c.2-.3.4-.3.7-.2s1.8.8 2.1 1c.3.1.5.2.6.3.1.1.1.7-.1 1.3Z"/></svg>';
   const WA_LINK = `https://wa.me/${CONTATTI.wa.replace('+','')}`;
   const NAV_ORDER = ['galleria','lana'];
-  const RAIL_LABELS = ['Home','nav.pascolo','nav.metamorfosi','nav.stagionatura','nav.tavola','nav.lana','galleria.label','nav.contatti'];
   const CROSSFADE_INTERVAL = 5000;
   const COOLDOWN = reduceMotion ? 80 : 700;
   const WHEEL_DEBOUNCE = 500;
@@ -123,7 +122,6 @@
   /* ===== GENERA DOM ===== */
   const panelsContainer = document.getElementById('panels');
   const contattiPanel = document.getElementById('contatti');
-  const railNav = document.getElementById('rail');
   const navLinksContainer = document.getElementById('navLinks');
 
   // Helpers
@@ -252,15 +250,6 @@
       .observe(panel, {attributes:true, attributeFilter:['class']});
   });
 
-  // Rail
-  RAIL_LABELS.forEach((lbl, i) => {
-    const btn = document.createElement('button');
-    btn.className = 'rail-dot' + (i===0?' active':'');
-    btn.setAttribute('data-goto', i);
-    const isKey = lbl.includes('.');
-    btn.innerHTML = `<span class="rail-label"${isKey?` data-i18n="${lbl}"`:''}>${isKey?'':lbl}</span>`;
-    railNav.appendChild(btn);
-  });
 
   // Nav links
   NAV_ORDER.forEach(id => {
@@ -293,7 +282,6 @@
 
   /* ===== ENGINE ===== */
   const panels = Array.from(document.querySelectorAll('.panel'));
-  const dots = Array.from(document.querySelectorAll('.rail-dot'));
   const total = panels.length;
   let current=0, animating=false, lastWheel=0, touchY=0, touchX=0, touchLock=false, touchInGallery=false;
 
@@ -317,7 +305,6 @@
     prev.style.zIndex=fwd?'1':'2'; next.style.zIndex=fwd?'2':'3';
     prev.classList.remove('is-active'); prev.classList.add(fwd?'is-leaving-fwd':'is-leaving-bwd');
     next.classList.add('is-active');
-    dots.forEach((d,idx)=>d.classList.toggle('active',idx===i));
     setTimeout(()=>{ clean(prev); next.style.zIndex=''; current=i; animating=false; }, COOLDOWN);
   }
 

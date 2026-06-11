@@ -127,13 +127,9 @@ Sito fratello di [Cave Oves](https://caveoves.it) — stessa identità visiva (f
   - Open/close via opacity transition
   - Burger → X animation
 
-### Rail (desktop only)
+### Rail
 
-- Fixed right side, vertical centered
-- Dots: 9px circles, white border, transparent fill
-- Active dot: oro fill, `scale(1.4)`
-- Hover: label tooltip appears (small, dark bg pill, slides left)
-- Hidden at ≤768px
+- Removed — intentionally simplified. Navigation via scroll/swipe/keyboard/nav links only.
 
 ---
 
@@ -173,7 +169,6 @@ All images WebP format.
 |---------|---------|-----------------|
 | Chapter card | Bottom-right, border-left | Full-width bottom, border-top, scrollable |
 | Scroll cue | Visible (arrow + text) | Hidden |
-| Rail | Visible, right side | Hidden |
 | Grain | Visible | Hidden |
 | Nav links | Centered, horizontal | Fullscreen overlay, large Playfair text |
 | Gallery strip | ~320px items | ~200px items |
