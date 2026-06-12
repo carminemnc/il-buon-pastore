@@ -109,6 +109,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--oro);outline-offset
 .scheda-item{display:flex;align-items:baseline;gap:.4rem;font-size:.75rem;line-height:1.4;padding:.45rem .7rem;border-radius:8px}
 .scheda-tag{font-size:.68rem;font-weight:600;white-space:nowrap}
 .scheda-val{color:var(--muted);font-size:.75rem}
+.scheda-val strong{color:var(--fg);font-weight:600}
 .scheda-item:nth-child(5n+1){background:rgba(200,146,42,.1)}
 .scheda-item:nth-child(5n+1) .scheda-tag{color:#C8922A}
 .scheda-item:nth-child(5n+2){background:rgba(160,98,59,.1)}
