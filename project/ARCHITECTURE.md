@@ -18,23 +18,27 @@ docs/
 ├── CNAME                   ← custom domain
 ├── robots.txt              ← crawler permissions + sitemap reference
 ├── sitemap.xml             ← URL + product images for Google
-├── css/style.css           ← all styles, animations, responsive
+├── css/style.css           ← all styles, @font-face, animations, responsive
 ├── js/
 │   ├── i18n.js             ← dictionary + toggle + persistence
 │   └── main.js             ← engine + manifests + DOM generation
-└── assets/imgs/
-    ├── hero.webp           ← ~495 KB, preloaded
-    ├── titolo.png          ← hero title logo (rendered white via CSS)
-    ├── sopratitolo.png     ← hero sopratitolo image (rendered white via CSS)
-    ├── favicon.png
-    ├── apple-touch-icon.png
-    ├── og-cover.jpg
-    ├── pascolo/            ← pascolo-1.webp ... pascolo-5.webp (1920px, ~250-435 KB)
-    ├── metamorfosi/        ← metamorfosi-1.webp ... metamorfosi-5.webp (1920px, ~35-74 KB)
-    ├── stagionatura/       ← stagionatura-1.webp ... stagionatura-3.webp (variable, ~115-234 KB)
-    ├── tavola/             ← tavola-1.webp ... tavola-2.webp (1920px, ~78-139 KB)
-    ├── lana/               ← lana-1.webp ... lana-2.webp (1920px, ~286-368 KB)
-    └── pecorino/           ← 14 product photos (800px long edge, ~48-173 KB)
+└── assets/
+    ├── fonts/
+    │   ├── dm-sans.woff2           ← DM Sans variable (300–600)
+    │   └── playfair-display.woff2  ← Playfair Display variable (400–900)
+    └── imgs/
+        ├── hero.webp           ← ~495 KB, preloaded
+        ├── titolo.png          ← hero title logo (rendered white via CSS)
+        ├── sopratitolo.png     ← hero sopratitolo image (rendered white via CSS)
+        ├── favicon.png
+        ├── apple-touch-icon.png
+        ├── og-cover.jpg
+        ├── pascolo/            ← pascolo-1.webp ... pascolo-5.webp
+        ├── metamorfosi/        ← metamorfosi-1.webp ... metamorfosi-5.webp
+        ├── stagionatura/       ← stagionatura-1.webp ... stagionatura-3.webp
+        ├── tavola/             ← tavola-1.webp ... tavola-2.webp
+        ├── lana/               ← lana-1.webp ... lana-2.webp
+        └── pecorino/           ← 14 product photos (800px long edge)
 ```
 
 ---
@@ -132,11 +136,11 @@ The HTML shell contains only the Hero panel and an empty Contatti section. Every
 1. **Contatti panel** innerHTML populated from `CONTATTI` object
 2. **Chapter panels** generated from `CHAPTERS` array, inserted before contatti
 3. **Gallery panel** generated from `CHAPTERS` entry with `gallery: true`, items from `GALLERY` array
-4. **Rail dots** generated from `RAIL_LABELS` array
-5. **Nav links** generated from `NAV_ORDER` array + hardcoded "Contatti"
-6. **i18n applied** via `window.i18n.setLang()`
-7. **Crossfade observers** attached to each `.panel-crossfade`
-8. **Product lightbox** element created and appended to body
+4. **Nav links** generated from `NAV_ORDER` array + hardcoded "Contatti"
+5. **i18n applied** via `window.i18n.setLang()`
+6. **Crossfade observers** attached to each `.panel-crossfade`
+7. **Product lightbox** element created and appended to body
+8. **Map click-to-load** handler attached to placeholder
 
 ---
 
@@ -201,12 +205,14 @@ Chapters support `data-focus` attribute on `.panel-bg` to control `background-po
 
 - Hero image `<link rel="preload">`
 - Gallery images `loading="lazy"`
-- Google Fonts: `rel="preconnect"` to `fonts.googleapis.com` and `fonts.gstatic.com`
+- Fonts self-hosted as variable woff2 (`docs/assets/fonts/`), no external requests
+- Google Maps loaded only on user click (click-to-load pattern)
 - Crossfade timers scoped to active panel only
 - `will-change: clip-path, opacity` on `.panel`
 - CSS transitions (GPU-composited) instead of JS animation
 - Single CSS file, two small JS files
 - All images WebP optimized (sections: 1920px long edge q78, gallery: 800px long edge q85)
+- Zero third-party requests on initial page load
 
 ---
 
@@ -214,7 +220,7 @@ Chapters support `data-focus` attribute on `.panel-bg` to control `background-po
 
 - Canonical URL + hreflang (it, en, x-default)
 - Open Graph tags with `og:locale`, `og:locale:alternate`, `og:site_name`
-- JSON-LD structured data: `LocalBusiness` schema with address, geo, hours, 14 products
+- JSON-LD structured data: `LocalBusiness` schema with address, geo, hours, `hasOfferCatalog`
 - `sitemap.xml` with Google image sitemap extension (all 14 product photos)
 - `robots.txt` allowing all crawlers
 - SEO-optimized `alt` text on gallery images: `"{name} - {subtitle} | Il Buon Pastore, pecorino a latte crudo biologico"`
@@ -226,8 +232,7 @@ Chapters support `data-focus` attribute on `.panel-bg` to control `background-po
 - `prefers-reduced-motion: reduce` → all transitions/animations disabled via CSS
 - `aria-label` on icon buttons (lang, close, burger)
 - `aria-expanded` on burger toggle
-- `role="dialog"` + `aria-modal="true"` on lightbox
-- `aria-label="Tappe del percorso"` on rail nav
+- `role="dialog"` + `aria-modal="true"` + bilingual `aria-label` on lightbox
 - Focus visible: `outline: 2px solid var(--oro)` on `:focus-visible`
 - `p:empty { display: none }` hides empty paragraphs cleanly
 - Keyboard navigation complete (disabled during lightbox)

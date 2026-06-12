@@ -45,7 +45,7 @@ const CONTATTI = {
 | Instagram | `https://instagram.com/ilbuonpastore` | Opens in new tab |
 | WhatsApp | `https://wa.me/393393179926` | Opens WhatsApp (no pre-filled message from contatti) |
 | Email | `mailto:levoland@libero.it` | Opens mail client |
-| Maps | Google Maps embed iframe | Inline, sandboxed |
+| Maps | Google Maps embed iframe | Click-to-load: placeholder shown first, iframe loads on user click |
 
 All external links have `target="_blank" rel="noopener noreferrer"`.
 
@@ -72,6 +72,14 @@ Built by `buildOrari()` helper, rebuilt on every language change:
 ---
 
 ## Google Maps Embed
+
+The map uses a **click-to-load** pattern for privacy compliance (no third-party requests until user action).
+
+**Placeholder** (initial state):
+- Dashed oro border, pin icon, CTA text (`contatti.map.cta` i18n key)
+- On click: replaces itself with the iframe
+
+**Iframe** (loaded on click):
 
 ```
 https://www.google.com/maps?q=Via+Ca'+Santino+1963+47834+Montefiore+Conca+RN&output=embed

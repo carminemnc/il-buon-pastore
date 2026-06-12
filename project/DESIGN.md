@@ -32,8 +32,10 @@ Sito fratello di [Cave Oves](https://caveoves.it) — stessa identità visiva (f
 
 | Role | Font | Weights | Usage |
 |------|------|---------|-------|
-| Headings | Playfair Display | 400, 500, 600, 700, 900 | h1, h2, product names, nav logo, mobile menu links |
+| Headings | Playfair Display | 400, 500, 600, 700, 900 | h1, h2, product names, nav logo, mobile menu links, gallery hint |
 | Body | DM Sans | 300, 400, 500, 600 | Paragraphs, labels, buttons, UI text |
+
+Fonts are **self-hosted** as variable woff2 files in `docs/assets/fonts/`. No external requests to Google Fonts. Declared via `@font-face` with `font-display:swap` at the top of `style.css`.
 
 ### Spacing
 
@@ -115,7 +117,7 @@ Sito fratello di [Cave Oves](https://caveoves.it) — stessa identità visiva (f
   - Place icon + label + address (centered)
   - Orari box: bordered (8px radius), label + rows (day | hours)
   - Closed day: hours in red (`rgba(192,57,43,.7)`)
-  - Map iframe: rounded 6px, 180px height
+  - Map: click-to-load placeholder (dashed oro border, pin icon + CTA text, loads iframe on click)
 - **Mobile**: left cards become 2×2 grid (icon + label only, detail hidden)
 
 ### Navigation (top)
