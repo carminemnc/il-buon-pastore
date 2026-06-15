@@ -7,7 +7,7 @@
   const CONTATTI = {
     wa: '+393393179926',
     email: 'levoland@libero.it',
-    instagram: 'ilbuonpastore',
+    instagram: 'aziendailbuonpastore',
     address: "Via Ca' Santino 1963, 47834 Montefiore Conca (RN)",
     mapsQuery: "Via+Ca'+Santino+1963+47834+Montefiore+Conca+RN",
     orari: [
