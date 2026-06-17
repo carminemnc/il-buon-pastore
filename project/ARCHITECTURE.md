@@ -24,12 +24,12 @@ docs/
 │   └── main.js             ← engine + manifests + DOM generation
 └── assets/
     ├── fonts/
+    │   ├── barlow-condensed.woff2  ← Barlow Condensed (300)
     │   ├── dm-sans.woff2           ← DM Sans variable (300–600)
     │   └── playfair-display.woff2  ← Playfair Display variable (400–900)
     └── imgs/
         ├── hero.webp           ← ~495 KB, preloaded
         ├── titolo.png          ← hero title logo (rendered white via CSS)
-        ├── sopratitolo.png     ← hero sopratitolo image (rendered white via CSS)
         ├── favicon.png
         ├── apple-touch-icon.png
         ├── og-cover.jpg
@@ -47,7 +47,7 @@ docs/
 
 | Index | Panel | Type | Content |
 |-------|-------|------|---------|
-| 0 | Hero | Static HTML | Sopratitolo image, title logo, subtitle text, CTA button |
+| 0 | Hero | Static HTML | Sopratitolo text, title logo, subtitle text, CTA button |
 | 1 | Pascolo | Chapter (5 photos crossfade) | Narrative text |
 | 2 | Metamorfosi | Chapter (5 photos crossfade) | Narrative text |
 | 3 | Stagionatura | Chapter (3 photos crossfade) | Narrative text |
@@ -78,8 +78,7 @@ Only one panel is `.is-active` at any time. `goTo(index)` is the **single entry 
 4. Set z-index: leaving panel lower, entering panel higher
 5. Remove `.is-active` from current, add direction class (`.is-leaving-fwd` or `.is-leaving-bwd`)
 6. Add `.is-active` to target panel
-7. Update rail dots (`.active` class)
-8. After `COOLDOWN` timeout: cleanup leaving panel, set `current = index`, set `animating = false`
+7. After `COOLDOWN` timeout: cleanup leaving panel, set `current = index`, set `animating = false`
 
 ### Transition CSS
 
@@ -191,7 +190,7 @@ No other persistent state. No session state. No URL routing.
 
 | Breakpoint | Changes |
 |------------|---------|
-| ≤768px | Rail hidden, grain hidden, burger menu, fullscreen overlay nav, chapter card full-width bottom-sheet (max-height 45vh, scrollable), contatti single column, scroll cue hidden |
+| ≤768px | Grain hidden, burger menu, fullscreen overlay nav, chapter card full-width bottom-sheet (max-height 45vh, scrollable), contatti single column, scroll cue hidden |
 
 ### Mobile Focus Points
 
@@ -218,9 +217,9 @@ Chapters support `data-focus` attribute on `.panel-bg` to control `background-po
 
 ## SEO
 
-- Canonical URL + hreflang (it, en, x-default)
+- Canonical URL
 - Open Graph tags with `og:locale`, `og:locale:alternate`, `og:site_name`
-- JSON-LD structured data: `LocalBusiness` schema with address, geo, hours, `hasOfferCatalog`
+- JSON-LD structured data: `LocalBusiness` schema with address, geo, hours
 - `sitemap.xml` with Google image sitemap extension (all 14 product photos)
 - `robots.txt` allowing all crawlers
 - SEO-optimized `alt` text on gallery images: `"{name} - {subtitle} | Il Buon Pastore, pecorino a latte crudo biologico"`

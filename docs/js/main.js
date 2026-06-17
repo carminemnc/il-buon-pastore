@@ -9,7 +9,6 @@
     email: 'levoland@libero.it',
     instagram: 'aziendailbuonpastore',
     address: "Via Ca' Santino 1963, 47834 Montefiore Conca (RN)",
-    mapsQuery: "Via+Ca'+Santino+1963+47834+Montefiore+Conca+RN",
     orari: [
       { days:{it:'Lun \u2013 Sab',en:'Mon \u2013 Sat'}, hours:'15:00 \u2013 19:00' },
       { days:{it:'Domenica',en:'Sunday'}, hours:{it:'Chiuso',en:'Closed'}, closed:true },
@@ -57,7 +56,7 @@
       scheda:{it:'Ingredienti: <strong>Latte crudo di pecora</strong>, caglio naturale di vitello, sale marino, erbe aromatiche | Stagionatura: Circa 20gg | Pezzatura: 1,5 kg | Conservazione: tra 0\u00b0 e 4\u00b0 | Disponibilit\u00e0: Da dicembre',
               en:'Ingredients: <strong>Raw sheep milk</strong>, natural calf rennet, sea salt, aromatic herbs | Ageing: ~20 days | Size: 1.5 kg | Storage: 0\u20134\u00b0C | Availability: From December'}},
     {src:'assets/imgs/pecorino/gobbo.webp', name:'Il Gobbo',
-      sub:{it:'A caglio vegetale',en:'Vegetable rennet'},
+      sub:{it:'A caglio vegetale',en:'With vegetable rennet'},
       desc:{it:"In passato il formaggio era l\u2019alimento dei contadini. Nelle terre di Montefiore e dintorni si usava \"l\u2019erba de ches\", un\u2019erba spontanea che messa nel latte munto in giornata aveva la capacit\u00e0 di cagliarlo. Questa tradizione molto vecchia era ormai completamente perduta e affidata ai racconti dei nonni. Noi abbiamo raccolto questa tradizione e la proponiamo con lo spirito di una volta che narra delle stagioni e dei pascoli dove hanno brucato le pecore.",
             en:"In the past, cheese was the peasant\u2019s staple. In the lands around Montefiore they used \u2018erba de ches\u2019, a wild herb that could curdle the day\u2019s fresh milk. This ancient tradition had been all but lost, surviving only in grandparents\u2019 tales. We\u2019ve revived it with the same spirit, telling of seasons and pastures where the sheep grazed."},
       scheda:{it:'Ingredienti: <strong>Latte crudo di pecora</strong>, caglio vegetale, sale marino | Stagionatura: Circa 60gg | Pezzatura: 1,2 kg | Conservazione: tra 0\u00b0 e 4\u00b0 | Disponibilit\u00e0: Da febbraio',

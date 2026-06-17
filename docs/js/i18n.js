@@ -5,6 +5,7 @@
     it:{
       'meta.desc':'Il Buon Pastore — pecorino a latte crudo biologico a Montefiore Conca (Rimini). Formaggi artigianali di pecora: stagionato, erborinato, di fossa, ricotta. Vendita diretta.',
       'nav.pascolo':'Pascolo','nav.metamorfosi':'Metamorfosi','nav.stagionatura':'Stagionatura','nav.tavola':'Tavola','nav.lana':'La lana','nav.galleria':'Il pecorino','nav.contatti':'Contatti',
+      'hero.sopratitolo':'Azienda Agricola Biologica',
       'hero.sub':'Pecorino a latte crudo, certificato biologico.<br>Un gesto antico, ogni giorno.',
       'hero.cta':'Scopri come nasce','hero.scroll':'scorri',
       'pascolo.label':'','pascolo.title':'Il Pascolo',
@@ -32,6 +33,7 @@
     en:{
       'meta.desc':'Il Buon Pastore — organic raw-milk pecorino in Montefiore Conca (Rimini, Italy). Artisan sheep cheese: aged, blue, pit-aged, ricotta. Farm-direct sales.',
       'nav.pascolo':'Pasture','nav.metamorfosi':'Transformation','nav.stagionatura':'Ageing','nav.tavola':'Table','nav.lana':'The wool','nav.galleria':'The cheese','nav.contatti':'Contact',
+      'hero.sopratitolo':'Organic Farm',
       'hero.sub':'Organic raw-milk pecorino.<br>An ancient craft, every day.',
       'hero.cta':"Discover how it's made",'hero.scroll':'scroll',
       'pascolo.label':'','pascolo.title':'The Pasture',
@@ -59,7 +61,7 @@
   };
 
   const KEY='ibp-lang', cbs=[];
-  function detect(){ const s=localStorage.getItem(KEY); if(s&&DICT[s])return s; const n=(navigator.language||'it').slice(0,2).toLowerCase(); return DICT[n]?n:'it'; }
+  function detect(){ const s=localStorage.getItem(KEY); if(s&&DICT[s])return s; const n=(navigator.language||'it').slice(0,2).toLowerCase(); return n==='it'?'it':'en'; }
   function apply(lang){
     const d=DICT[lang]||DICT.it;
     document.querySelectorAll('[data-i18n]').forEach(el=>{
