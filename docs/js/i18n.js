@@ -27,7 +27,7 @@
       'contatti.tel.title':'Come una volta',
       'contatti.tel.detail':'+39 339 317 9926',
       'contatti.wa.title':'Filo diretto','contatti.wa.detail':'Tira il filo, rispondiamo noi',
-      'contatti.dove':'Dove siamo','contatti.orari.label':'Orari','contatti.map.cta':'Tocca per aprire la mappa',
+      'contatti.dove':'Dove siamo','contatti.orari.label':'Orari','contatti.map.cta':'Apri in Google Maps','footer.privacy':'Privacy Policy',
     },
     en:{
       'meta.desc':'Il Buon Pastore — organic raw-milk pecorino in Montefiore Conca (Rimini, Italy). Artisan sheep cheese: aged, blue, pit-aged, ricotta. Farm-direct sales.',
@@ -54,7 +54,7 @@
       'contatti.tel.title':'Like the old days',
       'contatti.tel.detail':'+39 339 317 9926',
       'contatti.wa.title':'Direct line','contatti.wa.detail':"Pull the thread, we'll answer",
-      'contatti.dove':'Where we are','contatti.orari.label':'Hours','contatti.map.cta':'Tap to open the map',
+      'contatti.dove':'Where we are','contatti.orari.label':'Hours','contatti.map.cta':'Open in Google Maps','footer.privacy':'Privacy Policy',
     }
   };
 
