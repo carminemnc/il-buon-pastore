@@ -162,6 +162,7 @@
           <div class="map-wrap"><div class="map-placeholder" id="mapPlaceholder"><span class="contatto-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7Z"/><circle cx="12" cy="9" r="2.5"/></svg></span><span data-i18n="contatti.map.cta"></span></div></div>
         </div>
       </div>
+      <footer class="site-footer"><img src="assets/imgs/titolo.png" alt="Il Buon Pastore" class="footer-logo"><p>Il Buon Pastore di Preci &amp; Nonne Societ\u00e0 Agricola S.S.</p><p>Via Ca' Santino 1963, 47834 Montefiore Conca (RN) \u2014 P.IVA 03555670409</p><a href="privacy.html" class="footer-privacy" data-i18n="footer.privacy">Privacy Policy</a></footer>
     </div>`;
 
   // Chapters
@@ -357,7 +358,7 @@
   // Map click-to-load
   const mapEl = document.getElementById('mapPlaceholder');
   if(mapEl) mapEl.addEventListener('click', () => {
-    mapEl.parentElement.innerHTML = `<iframe src="https://www.google.com/maps?q=${CONTATTI.mapsQuery}&output=embed" width="100%" height="180" style="border:0;border-radius:6px" allowfullscreen loading="lazy" title="Mappa" sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>`;
+    window.open('https://maps.app.goo.gl/hH7NP1Rg33ceDnfk9', '_blank', 'noopener,noreferrer');
   });
 
   // Toggles
