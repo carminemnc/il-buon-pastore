@@ -15,7 +15,7 @@ Sito fratello di [Cave Oves](https://caveoves.it) — stessa identità visiva (f
 | `--bg` | `#FAF7F0` (Parchment) | Gallery bg, contatti bg, lightbox bg |
 | `--fg` | `#1A1A1A` (Ink) | Primary text, panel-bg fallback |
 | `--muted` | `#5A5A5A` | Body text, secondary info |
-| `--oro` | `#C8922A` | Accent: labels, borders, links, buttons, rail dots |
+| `--oro` | `#C8922A` | Accent: labels, borders, links, buttons, dots |
 | `--border` | `rgba(107,63,31,.08)` | Card borders, dividers |
 
 ### Scheda Tag Colors (earthy palette)
@@ -34,6 +34,7 @@ Sito fratello di [Cave Oves](https://caveoves.it) — stessa identità visiva (f
 |------|------|---------|-------|
 | Headings | Playfair Display | 400, 500, 600, 700, 900 | h1, h2, product names, nav logo, mobile menu links, gallery hint |
 | Body | DM Sans | 300, 400, 500, 600 | Paragraphs, labels, buttons, UI text |
+| Sopratitolo | Barlow Condensed | 300 | Hero sopratitolo text (uppercase, light) |
 
 Fonts are **self-hosted** as variable woff2 files in `docs/assets/fonts/`. No external requests to Google Fonts. Declared via `@font-face` with `font-display:swap` at the top of `style.css`.
 
@@ -63,8 +64,8 @@ Fonts are **self-hosted** as variable woff2 files in `docs/assets/fonts/`. No ex
 
 - Full-viewport background image (`hero.webp`, preloaded)
 - Dark overlay (`rgba(0,0,0,.35)`)
-- Centered content: sopratitolo image (white, small) → titolo image (white, large) → subtitle text (white, weight 400) → CTA button
-- Images use `filter: brightness(0) invert(1)` to render white from dark PNG sources
+- Centered content: sopratitolo text (Barlow Condensed, white, uppercase) → titolo image (white, large) → subtitle text (white, weight 400) → CTA button
+- Title image uses `filter: brightness(0) invert(1)` to render white from dark PNG source
 - CTA: pill shape, glass effect (`backdrop-filter:blur(4px)`), gradient background, hover lift
 - Bottom cue: "scorri" + bouncing arrow (hidden on mobile)
 
@@ -109,7 +110,7 @@ Fonts are **self-hosted** as variable woff2 files in `docs/assets/fonts/`. No ex
 ### Contatti Section
 
 - Two-column grid (`1fr 1.4fr`) on desktop, single column on mobile
-- **Left column**: 3 link cards (Instagram, WhatsApp, Email)
+- **Left column**: 4 link cards (Phone, Instagram, WhatsApp, Email)
   - Each: flex row, icon (oro, 28px) + text column (label uppercase oro + detail muted)
   - Border: `1px solid var(--border)`, radius 10px
   - Hover: border → oro, lift -2px, subtle shadow
@@ -117,7 +118,7 @@ Fonts are **self-hosted** as variable woff2 files in `docs/assets/fonts/`. No ex
   - Place icon + label + address (centered)
   - Orari box: bordered (8px radius), label + rows (day | hours)
   - Closed day: hours in red (`rgba(192,57,43,.7)`)
-  - Map: click-to-load placeholder (dashed oro border, pin icon + CTA text, loads iframe on click)
+  - Map: click-to-open placeholder (dashed oro border, pin icon + CTA text, opens Google Maps in new tab on click)
 - **Mobile**: left cards become 2×2 grid (icon + label only, detail hidden)
 
 ### Navigation (top)
